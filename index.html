@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Track A Game Dev 2026 Agenda</title>
+<title>Game Dev Agenda · GSG Track A</title>
+<meta name="description" content="Find your next Unity 2D and C# lesson. Browse 45 recordings, search topics, and keep track of your learning in the GSG Track A course agenda.">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%230F7C7A%22%2F%3E%3Cpath%20d%3D%22M18%2022h28a10%2010%200%200%201%2010%2010l-1%209a6%206%200%200%201-10%203l-4-5H23l-4%205a6%206%200%200%201-10-3l-1-9a10%2010%200%200%201%2010-10z%22%20fill%3D%22%23ffffff%22%2F%3E%3Crect%20x%3D%2215%22%20y%3D%2229%22%20width%3D%224%22%20height%3D%2212%22%20rx%3D%221%22%20fill%3D%22%230F7C7A%22%2F%3E%3Crect%20x%3D%2211%22%20y%3D%2233%22%20width%3D%2212%22%20height%3D%224%22%20rx%3D%221%22%20fill%3D%22%230F7C7A%22%2F%3E%3Ccircle%20cx%3D%2245%22%20cy%3D%2231%22%20r%3D%222.6%22%20fill%3D%22%230F7C7A%22%2F%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2236%22%20r%3D%222.6%22%20fill%3D%22%230F7C7A%22%2F%3E%3Ccircle%20cx%3D%2240%22%20cy%3D%2236%22%20r%3D%222.6%22%20fill%3D%22%230F7C7A%22%2F%3E%3Ccircle%20cx%3D%2245%22%20cy%3D%2241%22%20r%3D%222.6%22%20fill%3D%22%230F7C7A%22%2F%3E%3C%2Fsvg%3E">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
@@ -71,32 +72,183 @@ td.where{white-space:nowrap;font-variant-numeric:tabular-nums}
 .method{background:var(--surface-2);border:1px solid var(--rule);padding:14px 16px;font-size:14px;max-width:none}
 kbd.ar{font-family:var(--ar)}
 .unit{font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:.06em;text-transform:uppercase}
+
+/* Study interface: standalone, responsive, progressively enhanced. */
+:root { --bg:#f6f7f9; --surface-2:#f0f3f5; --text:#202e38; --muted:#606f79; --rule:#dfe5e9; --accent:#087d73; --accent-soft:#e0f2ed; }
+html { scroll-padding-top:24px; }
+body { font-size:15px; }
+button,input,select { font:inherit; }
+button,a,input,select,summary { -webkit-tap-highlight-color:transparent; }
+button { cursor:pointer; }
+:focus-visible { outline:3px solid var(--accent); outline-offset:4px; }
+[hidden] { display:none!important; }
+.js-only { display:none; }
+.enhanced .js-only { display:flex; }
+.skip { position:fixed; top:-100px; left:20px; z-index:10; background:var(--surface); padding:12px; }
+.skip:focus { top:12px; }
+.app { max-width:1600px; margin:auto; display:grid; grid-template-columns:300px minmax(0,1fr); min-height:100vh; }
+.sidebar { position:sticky; top:0; height:100vh; padding:32px 22px; border-right:1px solid var(--rule); background:var(--surface); display:flex; flex-direction:column; gap:32px; }
+.brand { display:flex; align-items:center; gap:11px; color:var(--text); font:600 16px var(--display); }
+.brand:hover { text-decoration:none; }
+.brand-mark { width:38px; height:38px; flex-shrink:0; display:grid; place-items:center; border-radius:12px; background:var(--accent); color:var(--surface); font:600 19px var(--mono); }
+.brand small { display:block; font:11px var(--mono); color:var(--muted); margin-top:5px; letter-spacing:.1em; }
+.nav-label { margin:0 12px 10px; font:11px var(--mono); letter-spacing:.12em; color:var(--muted); }
+.side-nav { display:grid; gap:6px; }
+.side-nav a { display:flex; align-items:center; gap:12px; border-radius:8px; padding:11px 12px; color:var(--muted); font-weight:500; }
+.side-nav a:hover { background:var(--surface-2); text-decoration:none; color:var(--text); }
+.side-nav a[aria-current="page"] { background:var(--accent-soft); color:var(--accent); }
+.nav-icon { font-family:var(--mono); width:20px; text-align:center; font-size:18px; }
+.nav-count { margin-left:auto; font:11px var(--mono); }
+.study-progress { padding:16px; border:1px solid var(--rule); border-radius:12px; display:block!important; }
+.study-progress h2 { font:600 13px var(--sans); margin:0 0 10px; }
+.study-progress p { margin:8px 0 0; color:var(--muted); font-size:12px; }
+.study-progress:not(.ready) { display:none!important; }
+progress { width:100%; height:6px; border:0; border-radius:9px; overflow:hidden; background:var(--rule); accent-color:var(--accent); }
+progress::-webkit-progress-bar { background:var(--rule); }
+progress::-webkit-progress-value { background:var(--accent); border-radius:9px; }
+.sidebar-bottom { margin-top:auto; }
+.sidebar-bottom a { display:block; font-size:13px; margin-bottom:14px; }
+.theme-button { width:100%; justify-content:space-between; border:1px solid var(--rule); border-radius:8px; padding:9px 12px; background:var(--surface); color:var(--muted); font-size:13px; }
+.wrap { width:100%; max-width:1200px; padding:30px 46px 48px; min-width:0; }
+.topline { display:flex; align-items:center; justify-content:space-between; gap:12px; color:var(--muted); font-size:12px; margin-bottom:36px; }
+.topline b { color:var(--text); font-weight:500; }
+.status { display:inline-flex; align-items:center; gap:7px; border:1px solid var(--rule); border-radius:30px; padding:4px 10px; font-size:11px; white-space:nowrap; }
+.status::before { content:""; width:6px; height:6px; background:var(--accent); border-radius:50%; }
+header.top { padding:0; border:0; }
+.eyebrow { color:var(--accent); font-size:11px; }
+h1 { font-size:clamp(28px,3vw,40px); letter-spacing:-1.5px; margin:10px 0 12px; }
+.lead { font-size:15px; margin:0; max-width:65ch; }
+.facts { grid-template-columns:repeat(4,minmax(0,1fr)); gap:0; border-block:1px solid var(--rule); padding:20px 0; margin:26px 0; }
+.fact { padding:0 22px; border:0; border-right:1px solid var(--rule); background:none; }
+.fact:first-child { padding-left:0; }.fact:last-child { border:0; }
+.fact b { font-size:24px; letter-spacing:-.7px; }.fact span { font-size:12px; }
+.latest { display:flex; gap:16px; align-items:center; justify-content:space-between; padding:17px 20px; background:var(--accent-soft); border:1px solid var(--rule); border-radius:12px; margin-bottom:26px; }
+.latest p { margin:0; font-size:13px; color:var(--muted); }.latest strong { display:block; color:var(--text); font-weight:600; font-size:14px; margin-bottom:3px; }
+.latest a { white-space:nowrap; font-weight:600; font-size:13px; }
+.searchbar { position:relative; align-items:center; gap:12px; background:var(--surface); border:1px solid var(--rule); border-radius:10px; padding:0 14px; margin-bottom:28px; }
+.searchbar:focus-within { border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-soft); }
+.searchbar svg { flex-shrink:0; color:var(--muted); }
+.searchbar input { width:100%; min-width:0; border:0; outline:0; background:transparent; color:var(--text); padding:15px 0; font-size:14px; }
+.searchbar button { border:0; background:var(--surface-2); color:var(--muted); border-radius:5px; padding:4px 8px; font-size:12px; }
+.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+.view { scroll-margin-top:24px; }
+.view > h2 { margin:0 0 6px; font-size:23px; letter-spacing:-.6px; }
+.view > p { margin:0 0 20px; color:var(--muted); font-size:14px; max-width:80ch; }
+.toolbar { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin:18px 0; }
+.toolbar-group { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+.toolbar label { font-size:12px; color:var(--muted); }
+select,.soft-button { border:1px solid var(--rule); border-radius:7px; color:var(--text); background:var(--surface); padding:8px 11px; font-size:12px; min-height:38px; }
+.text-button { border:0; color:var(--accent); background:none; font-size:12px; padding:10px 4px; }
+.result-count { font:12px var(--mono); color:var(--muted); }
+.topic-group { border:1px solid var(--rule); border-radius:12px; background:var(--surface); margin:10px 0; overflow:hidden; }
+.topic-group > summary { display:flex; list-style:none; align-items:center; gap:14px; padding:18px 20px; cursor:pointer; }
+.topic-group > summary::-webkit-details-marker { display:none; }
+.topic-group > summary::after,.lec > summary::after { content:"⌄"; color:var(--muted); font:20px var(--sans); margin-left:auto; }
+.topic-group[open] > summary::after,.lec[open] > summary::after { transform:rotate(180deg); }
+.topic-number { display:grid; place-items:center; width:34px; height:34px; flex-shrink:0; border-radius:9px; background:var(--surface-2); color:var(--accent); font:12px var(--mono); }
+.topic-group h3 { margin:0; font:600 14px var(--display); }
+.topic-total { display:block; font:12px var(--sans); margin-top:3px; color:var(--muted); }
+.topic-content { padding:0 20px 20px; }
+.topic-content > p { font-size:14px; }
+.tablewrap { border:0; border-top:1px solid var(--rule); border-radius:0; }
+th { padding:12px 10px; font-size:10px; }
+td { padding:13px 10px; line-height:1.6; font-size:13px; }
+td:first-child { width:45%; }td.where { white-space:normal; width:23%; }
+.chip { font-size:10px; border:0; padding:3px 6px; border-radius:4px; }
+.tablewrap tr:hover td { background:var(--bg); }
+.reading-guide { border:1px solid var(--rule); background:var(--surface); padding:12px 16px; border-radius:9px; margin:16px 0; font-size:12px; color:var(--muted); }
+.reading-guide summary { cursor:pointer; color:var(--text); font-weight:500; }.reading-guide p { max-width:none; }
+.legend { gap:8px 14px; font-size:12px; }
+.agenda-guide .lab { margin:0; }
+.agenda-guide .legend { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); }
+.lec { border-radius:10px; margin:10px 0; overflow:hidden; }
+.lec > summary { grid-template-columns:44px minmax(0,1fr) auto 18px; align-items:center; padding:17px 20px; gap:14px; }
+.lec > summary:hover,.topic-group > summary:hover { background:var(--bg); }
+.lec summary .n { color:var(--accent); font-size:11px; border-radius:7px; background:var(--accent-soft); padding:8px 5px; text-align:center; }
+.lec summary .t { font-size:14px; line-height:1.6; }
+.lec summary .t small { display:block; margin:3px 0 0; font-size:12px; line-height:1.5; }
+.lecture-preview { display:block; color:var(--muted); font:13px var(--sans); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; margin:3px 0; }
+.lec summary .d { font-size:11px; }.lec summary .d a { padding:8px 0; }
+.lec .body { gap:24px; padding:22px; grid-template-columns:minmax(0,1.25fr) minmax(0,1fr); }
+.lec .body > div { min-width:0; }
+.lec .body p,.lec .body li { overflow-wrap:anywhere; }
+.lec .lab { margin-bottom:12px; }
+.lec .agenda li { padding:6px 10px; }.lec .cov li { margin-bottom:10px; }
+.lecture-actions { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; padding:12px 20px; border-top:1px solid var(--rule); background:var(--bg); font-size:12px; }
+.lecture-actions label { display:flex; align-items:center; gap:8px; cursor:pointer; min-height:28px; }
+.lecture-actions input { accent-color:var(--accent); width:16px; height:16px; }
+.lec.is-watched summary .n { background:var(--surface-2); color:var(--muted); }
+.watched-badge { font:11px var(--sans); color:var(--accent); margin-left:8px; }
+.empty-state { padding:35px 20px; text-align:center; border:1px dashed var(--rule); border-radius:12px; color:var(--muted); margin-top:16px; }
+.empty-state h3 { margin:0 0 8px; color:var(--text); }.empty-state p { margin:0 auto 12px; }
+.roadmap-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin:20px 0; }
+.roadmap-card { background:var(--surface); border:1px solid var(--rule); border-radius:12px; padding:20px; }
+.roadmap-card h3 { margin:8px 0 12px; font-size:15px; }.roadmap-card ul { padding-left:18px; margin:0; color:var(--muted); font-size:14px; }.roadmap-card li { margin:7px 0; }
+.roadmap-card .unit { font-size:10px; }
+.method { border-radius:12px; }.method p { max-width:none; }
+footer { margin-top:36px; padding-top:18px; border-top:1px solid var(--rule); display:flex; gap:16px; justify-content:space-between; font-size:11px; color:var(--muted); }
+@media(prefers-color-scheme:dark) { :root:not([data-theme="light"]) { --bg:#10191e; --surface-2:#213038; --text:#e4ecee; --muted:#a5b5bd; --rule:#32424a; --accent:#69d1be; --accent-soft:#1c3936; } }
+:root[data-theme="dark"] { --bg:#10191e; --surface-2:#213038; --text:#e4ecee; --muted:#a5b5bd; --rule:#32424a; --accent:#69d1be; --accent-soft:#1c3936; color-scheme:dark; }
+:root[data-theme="light"] { color-scheme:light; }
+@media(min-width:1500px) { .wrap { padding-inline:64px; } }
+@media(min-width:801px) { .brand { white-space:nowrap; } }
+@media(max-width:1100px) { .app { grid-template-columns:280px minmax(0,1fr); }.sidebar { padding:28px 14px; }.wrap { padding:26px; }.fact { padding-inline:14px; }.lec .body { grid-template-columns:1fr; } }
+@media(max-width:800px) {
+ html { scroll-padding-top:130px; }
+ .app { display:block; }.sidebar { position:sticky; top:0; z-index:5; height:auto; padding:16px 20px 0; gap:16px; border-right:0; border-bottom:1px solid var(--rule); }
+ .brand { font-size:14px; }.brand small { font-size:10px; }.brand-mark { width:34px; height:34px; }
+ .nav-label,.sidebar-bottom > a,.study-progress { display:none!important; }.study-progress.ready { display:none!important; }
+ .side-nav { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:3px; }
+ .side-nav a { justify-content:center; padding:12px 5px; border-radius:8px 8px 0 0; font-size:12px; gap:5px; }.nav-icon,.nav-count { display:none; }
+ .sidebar-bottom { position:absolute; right:20px; top:19px; }.theme-button { width:auto; font-size:11px; padding:7px 10px; gap:8px; }
+ .wrap { padding:24px 20px 36px; }.topline { margin-bottom:26px; }.facts { margin:22px 0; }.fact b { font-size:21px; }
+ .latest { padding:14px 16px; }.latest p { font-size:12px; }
+ .searchbar { margin-bottom:24px; }.view > h2 { font-size:21px; }
+}
+@media(max-width:540px) {
+ h1 { letter-spacing:-1px; font-size:30px; }.topline { font-size:11px; gap:6px; }.topline .status { font-size:10px; }
+ .facts { grid-template-columns:repeat(2,minmax(0,1fr)); row-gap:20px; }.fact:nth-child(3) { padding-left:0; }.fact:nth-child(2) { border:0; }
+ .latest { align-items:flex-start; flex-direction:column; gap:9px; }.latest strong { font-size:13px; }
+ .topic-group > summary { padding:15px 13px; gap:10px; }.topic-group h3 { font-size:13px; }.topic-content { padding:0 14px 14px; }
+ .tablewrap table,.tablewrap tbody,.tablewrap tr,.tablewrap td { display:block; width:100%; }.tablewrap th { display:none; }
+ .tablewrap td { padding:5px 0; border:0; }.tablewrap tr { padding:12px 0; border-bottom:1px solid var(--rule); }.tablewrap tr:first-child { display:none; }
+ .tablewrap tr:last-child { border:0; }.tablewrap td:first-child { font-weight:500; }.tablewrap td:last-child { color:var(--muted); }
+ .tablewrap td:empty { display:none; }.tablewrap td.where { width:100%; }
+ .lec > summary { grid-template-columns:38px minmax(0,1fr) 16px; gap:10px; padding:14px 12px; }.lec summary .d { grid-column:2; grid-row:2; }.lec > summary::after { grid-column:3; grid-row:1; }.lec .body { padding:16px; }
+ .lecture-preview { white-space:normal; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; }.lec summary .t { font-size:13px; }
+ .roadmap-grid { grid-template-columns:1fr; }.toolbar-group { gap:7px; }.toolbar { gap:8px; }select { max-width:180px; }
+ footer { flex-direction:column; gap:6px; }.legend { display:grid; }.agenda-guide .legend { grid-template-columns:1fr; }
+}
+@media print { .app { display:block; }.sidebar,.searchbar,.latest,.toolbar,.lecture-actions,.topline,.empty-state { display:none!important; }.wrap { max-width:none; padding:0; }.view[hidden],.topic-group[hidden],.lec[hidden] { display:block!important; }body { background:white; color:black; }.lec,.topic-group { break-inside:avoid; } }
+
 </style>
 </head>
 <body>
 
-<div class="wrap">
-<header class="top">
-  <div class="eyebrow">GSG Technical Training · Track A: Game Development 2026 · Unit 1 (Unity 2D &amp; C# basics)</div>
-  <h1>Track A Game Dev 2026 Agenda</h1>
-  <p class="lead">A topic-by-topic map of the 45-video playlist through Lecture 41, checked on 23 September 2026. Built from the lecture recordings: full auto-transcripts establish what was taught, while visually checked agenda frames preserve the instructor's plans and colour marks.</p>
-  <div class="facts">
-    <div class="fact"><b>45</b><span>videos (Lecture 0–41, awareness session, 2 guest talks)</span></div>
-    <div class="fact"><b>≈ 107 h</b><span>of recordings, all still Unit 1</span></div>
-    <div class="fact"><b>40</b><span>lectures with an on-screen agenda doc</span></div>
-    <div class="fact"><b>Unity 6.4 → 6.6</b><span>VS Code, URP 2D, new Input System</span></div>
-  </div>
-  <nav class="toc">
-    <a href="#map">Topic map</a><a href="#lectures">Lecture by lecture</a><a href="#pending">Still pending in Unit 1</a><a href="#method">How this was built</a>
-  </nav>
-</header>
-
-<p class="note">Notation: <b>V07</b> = position in the playlist, <b>L5</b> = lecture number in the video title. Timestamps are approximate and link into the video. "Where" cells list the lecture that actually teaches the topic, not where it was merely announced.</p>
-
-<h2 id="map">Topic map: what is taught where</h2>
-<p>Grouped by theme rather than by date. Within a theme, rows follow the order the instructor actually taught them.</p>
-
-<h3>1. Orientation, setup and tooling</h3>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app">
+<aside class="sidebar" aria-label="Course navigation">
+  <a class="brand" href="#map"><span class="brand-mark" aria-hidden="true">&lt;/&gt;</span><span>Game Dev Agenda<small>GSG · TRACK A / 2026</small></span></a>
+  <div><p class="nav-label">YOUR COURSE GUIDE</p><nav class="side-nav" aria-label="Browse agenda">
+    <a href="#map" data-view="map"><span class="nav-icon" aria-hidden="true">▦</span>Topic library<span class="nav-count" id="map-count">17</span></a>
+    <a href="#lectures" data-view="lectures"><span class="nav-icon" aria-hidden="true">▷</span>Lectures<span class="nav-count" id="lecture-count">45</span></a>
+    <a href="#pending" data-view="pending"><span class="nav-icon" aria-hidden="true">↗</span>What’s next</a>
+    <a href="#method" data-view="method"><span class="nav-icon" aria-hidden="true">ⓘ</span>About</a>
+  </nav></div>
+  <div class="study-progress js-only" id="study-progress"><h2>Your learning progress</h2><progress id="progress" value="0" max="45" aria-label="Videos marked watched"></progress><p id="progress-label">0 of 45 videos watched</p><p id="storage-note">Saved in this browser.</p></div>
+  <div class="sidebar-bottom"><a href="https://www.youtube.com/playlist?list=PLV-pOnilkSzCJ8mVed-GF1MBP4__v0-VP" target="_blank" rel="noopener noreferrer">Open YouTube playlist ↗</a><button class="theme-button js-only" id="theme" type="button" aria-label="Change color theme">Theme <span id="theme-label">System</span></button></div>
+</aside>
+<main class="wrap" id="main" tabindex="-1">
+  <div class="topline"><span>Track A <span aria-hidden="true">/</span> <b>Unity 2D &amp; C#</b></span><span class="status">Unit 1 · In progress</span></div>
+  <header class="top"><div class="eyebrow">LESS SEARCHING. MORE CREATING.</div><h1>Your game development journey.</h1><p class="lead">Find a concept, revisit a lesson, or pick up where you left off.<br>A study companion for GSG’s Game Development course.</p>
+    <div class="facts"><div class="fact"><b>45</b><span>course videos</span></div><div class="fact"><b>≈ 107 h</b><span>of learning</span></div><div class="fact"><b>17</b><span>topic groups</span></div><div class="fact"><b>Unit 1</b><span>Unity 2D &amp; C# basics</span></div></div>
+  </header>
+  <div class="latest"><div><strong>Latest in this guide · Lecture 41</strong><p>Animation-event footsteps, trigger sounds, and Fixed &amp; Distance Joint 2D.</p></div><a href="#v45">Explore lecture <span aria-hidden="true">→</span></a></div>
+  <div class="searchbar js-only"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><label class="sr-only" for="search">Search topics and lectures</label><input id="search" type="search" placeholder="Search a topic, lecture, or keyword…" autocomplete="off" aria-describedby="search-status"><button id="clear-search" type="button" hidden>Clear</button></div>
+  <p class="sr-only" id="search-status" role="status" aria-live="polite"></p>
+  <section class="view" id="map" aria-labelledby="map-heading"><h2 id="map-heading">Topic library</h2><p>Go straight to what you need. Open a group to find concepts and their lecture timestamps.</p>
+    <div class="toolbar js-only"><span class="result-count" id="topic-results">17 topic groups</span><div class="toolbar-group"><button class="text-button" type="button" data-expand="topics">Expand all</button><button class="text-button" type="button" data-collapse="topics">Collapse all</button></div></div>
+    <details class="topic-group" id="topic-1"><summary><span class="topic-number">01</span><span><h3>Orientation, setup and tooling</h3><span class="topic-total">7 topics</span></span></summary><div class="topic-content">
 <div class="tablewrap"><table>
 <tr><th>Topic</th><th>Where</th><th>Detail</th></tr>
 <tr><td>Program intro, two tracks, why game dev, alumni stories</td><td class="where"><span class="chip"><a href="https://youtu.be/kxb-fcH8gRk">V01 Awareness</a></span></td><td>Pre-course session. No Unity.</td></tr>
@@ -108,7 +260,8 @@ kbd.ar{font-family:var(--ar)}
 <tr><td>Package Manager, Unity Registry, Asset Store, Hub modules, git-URL and custom packages</td><td class="where"><span class="chip"><a href="https://youtu.be/xG6IhaOQ6pU?t=2760">V32 L29</a></span></td><td>00:46–01:30, while installing Cinemachine.</td></tr>
 </table></div>
 
-<h3>2. Unity editor fundamentals (2D)</h3>
+</div></details>
+<details class="topic-group" id="topic-2"><summary><span class="topic-number">02</span><span><h3>Unity editor fundamentals (2D)</h3><span class="topic-total">11 topics</span></span></summary><div class="topic-content">
 <div class="tablewrap"><table>
 <tr><th>Topic</th><th>Where</th><th>Detail</th></tr>
 <tr><td>Sprites, Sprite Renderer, Order in Layer, Empty Parent grouping</td><td class="where"><span class="chip"><a href="https://youtu.be/MlA4UMZlChM?t=3600">V03 L1</a></span></td><td>01:00–02:00.</td></tr>
@@ -124,7 +277,8 @@ kbd.ar{font-family:var(--ar)}
 <tr><td>Build Profiles / Scene List</td><td class="where"><span class="chip">V20 L18</span><span class="chip">V21 L19</span><span class="chip">V39 L36</span></td><td></td></tr>
 </table></div>
 
-<h3>3. C# fundamentals</h3>
+</div></details>
+<details class="topic-group" id="topic-3"><summary><span class="topic-number">03</span><span><h3>C# fundamentals</h3><span class="topic-total">23 topics</span></span></summary><div class="topic-content">
 <div class="tablewrap"><table>
 <tr><th>Topic</th><th>Where</th><th>Detail</th></tr>
 <tr><td>First script, print(), Start()</td><td class="where"><span class="chip"><a href="https://youtu.be/OZIQpBduiWY?t=7800">V04 L2</a></span></td><td>02:10–02:20.</td></tr>
@@ -152,7 +306,8 @@ kbd.ar{font-family:var(--ar)}
 <tr><td>Deferred to Unit 2: OOP, Git/GitHub, new Input System proper, arrays/lists, bitwise ops, exceptions, C# events</td><td class="where">—</td><td>Repeatedly promised across L14–L37.</td></tr>
 </table></div>
 
-<h3>4. Physics 2D</h3>
+</div></details>
+<details class="topic-group" id="topic-4"><summary><span class="topic-number">04</span><span><h3>Physics 2D</h3><span class="topic-total">13 topics</span></span></summary><div class="topic-content">
 <div class="tablewrap"><table>
 <tr><th>Topic</th><th>Where</th><th>Detail</th></tr>
 <tr><td>Physics "trailer": Rigidbody2D + colliders, no code</td><td class="where"><span class="chip"><a href="https://youtu.be/lnwid3rFofI?t=7200">V13 L11</a></span></td><td>02:00–02:20.</td></tr>
@@ -170,7 +325,8 @@ kbd.ar{font-family:var(--ar)}
 <tr><td>Distance Joint 2D: swinging attachment, distance, anchors, connected body and breaking</td><td class="where"><span class="chip"><a href="https://youtu.be/smDlhiMGsHI?t=7200">V45 L41</a></span></td><td>02:00–02:14. Maximum Distance Only discussed with an inconclusive demo; other joints and Effectors still pending.</td></tr>
 </table></div>
 
-<h3>5. Scenes and saved data</h3>
+</div></details>
+<details class="topic-group" id="topic-5"><summary><span class="topic-number">05</span><span><h3>Scenes and saved data</h3><span class="topic-total">5 topics</span></span></summary><div class="topic-content">
 <div class="tablewrap"><table>
 <tr><th>Topic</th><th>Where</th><th>Detail</th></tr>
 <tr><td>SceneManager.LoadScene, build index (first attempt froze)</td><td class="where"><span class="chip"><a href="https://youtu.be/R17YuL0TplM?t=8700">V20 L18</a></span></td><td>02:25–02:34.</td></tr>
@@ -180,7 +336,8 @@ kbd.ar{font-family:var(--ar)}
 <tr><td>Managers persisting between scenes, ScriptableObjects, SQLite, Addressables</td><td class="where">—</td><td>Still on the agenda as future items (see below).</td></tr>
 </table></div>
 
-<h3>6. UI (Canvas + TextMeshPro)</h3>
+</div></details>
+<details class="topic-group" id="topic-6"><summary><span class="topic-number">06</span><span><h3>UI (Canvas + TextMeshPro)</h3><span class="topic-total">10 topics</span></span></summary><div class="topic-content">
 <div class="tablewrap"><table>
 <tr><th>Topic</th><th>Where</th><th>Detail</th></tr>
 <tr><td>Canvas, EventSystem, Image, RectTransform (pivot, width/height), draw order, Raycast Target, TMP import</td><td class="where"><span class="chip"><a href="https://youtu.be/TEsZzsH_vpA?t=480">V22 L20</a></span></td><td>00:08–00:52 (short lecture).</td></tr>
@@ -195,7 +352,8 @@ kbd.ar{font-family:var(--ar)}
 <tr><td>Sprite Mask + UI Masks, UI Toolkit</td><td class="where">—</td><td>Masks still pending; UI Toolkit promised for Unit 3.</td></tr>
 </table></div>
 
-<h3>7. Sorting layers and prefabs</h3>
+</div></details>
+<details class="topic-group" id="topic-7"><summary><span class="topic-number">07</span><span><h3>Sorting layers and prefabs</h3><span class="topic-total">3 topics</span></span></summary><div class="topic-content">
 <div class="tablewrap"><table>
 <tr><th>Topic</th><th>Where</th><th>Detail</th></tr>
 <tr><td>Sorting Layers vs Order in Layer</td><td class="where"><span class="chip"><a href="https://youtu.be/MYFYJ5gLc2g?t=6780">V25 L23</a></span><span class="chip">V28 L26</span></td><td>01:53–02:04. Postponed from L18–L22.</td></tr>
@@ -203,7 +361,8 @@ kbd.ar{font-family:var(--ar)}
 <tr><td>Instantiate, prefab reference rules, prefab files are YAML</td><td class="where"><span class="chip"><a href="https://youtu.be/ZoRDvTsJAsE?t=3960">V26 L24</a></span></td><td>01:06–01:45.</td></tr>
 </table></div>
 
-<h3>8. Animation</h3>
+</div></details>
+<details class="topic-group" id="topic-8"><summary><span class="topic-number">08</span><span><h3>Animation</h3><span class="topic-total">5 topics</span></span></summary><div class="topic-content">
 <div class="tablewrap"><table>
 <tr><th>Topic</th><th>Where</th><th>Detail</th></tr>
 <tr><td>Classical vs keyframe animation, Animation window, Loop Time, dopesheet / curves, Animator Controller, parameters and transitions</td><td class="where"><span class="chip"><a href="https://youtu.be/ZoRDvTsJAsE?t=6300">V26 L24</a></span></td><td>01:45–02:38.</td></tr>
@@ -213,14 +372,16 @@ kbd.ar{font-family:var(--ar)}
 <tr><td>Footstep Animation Events on the running clip</td><td class="where"><span class="chip"><a href="https://youtu.be/smDlhiMGsHI?t=2160">V45 L41</a></span></td><td>00:36–00:43. Select foot-contact frames and call public sound methods on the Animator's object.</td></tr>
 </table></div>
 
-<h3>9. Tilemaps</h3>
+</div></details>
+<details class="topic-group" id="topic-9"><summary><span class="topic-number">09</span><span><h3>Tilemaps</h3><span class="topic-total">2 topics</span></span></summary><div class="topic-content">
 <div class="tablewrap"><table>
 <tr><th>Topic</th><th>Where</th><th>Detail</th></tr>
 <tr><td>Pipeline: sprite sheet → slice and PPU → Tile Palette → Grid / Tilemap → paint; sorting layers; Tilemap + Composite colliders; Rule Tiles; Animated Tiles</td><td class="where"><span class="chip"><a href="https://youtu.be/PW_a7ga4A9w?t=1440">V28 L26</a></span></td><td>00:24–02:42, the whole topic in one lecture.</td></tr>
 <tr><td>Extra tilemaps (torch, fire, boxes, Lesson 28 level)</td><td class="where"><span class="chip">V29 L27</span><span class="chip">V30 L28</span><span class="chip">V33 L30</span></td><td></td></tr>
 </table></div>
 
-<h3>10. 2D lighting and game feel</h3>
+</div></details>
+<details class="topic-group" id="topic-10"><summary><span class="topic-number">10</span><span><h3>2D lighting and game feel</h3><span class="topic-total">4 topics</span></span></summary><div class="topic-content">
 <div class="tablewrap"><table>
 <tr><th>Topic</th><th>Where</th><th>Detail</th></tr>
 <tr><td>Game feel / juice (Canabalt, juice video, Game Feel book)</td><td class="where"><span class="chip"><a href="https://youtu.be/IhvcOt6nfTU?t=360">V29 L27</a></span></td><td>00:06–00:22.</td></tr>
@@ -229,7 +390,8 @@ kbd.ar{font-family:var(--ar)}
 <tr><td>Emotion through the senses (optional after-class talk)</td><td class="where"><span class="chip"><a href="https://youtu.be/IhvcOt6nfTU?t=7560">V29 L27</a></span></td><td>02:06–02:42.</td></tr>
 </table></div>
 
-<h3>11. Pixel art and Pixel Perfect Camera</h3>
+</div></details>
+<details class="topic-group" id="topic-11"><summary><span class="topic-number">11</span><span><h3>Pixel art and Pixel Perfect Camera</h3><span class="topic-total">3 topics</span></span></summary><div class="topic-content">
 <div class="tablewrap"><table>
 <tr><th>Topic</th><th>Where</th><th>Detail</th></tr>
 <tr><td>Pixel-art import checklist (PPU, Point filter, no mipmaps, no compression)</td><td class="where"><span class="chip"><a href="https://youtu.be/qkiShp9dGZg?t=6120">V30 L28</a></span></td><td>01:42–01:48.</td></tr>
@@ -237,7 +399,8 @@ kbd.ar{font-family:var(--ar)}
 <tr><td>Isometric / top-down / side view theory, Penrose triangle, Monument Valley</td><td class="where"><span class="chip"><a href="https://youtu.be/brlccAo6l_A?t=1140">V35 L32</a></span></td><td>00:19–00:45.</td></tr>
 </table></div>
 
-<h3>12. Cinemachine</h3>
+</div></details>
+<details class="topic-group" id="topic-12"><summary><span class="topic-number">12</span><span><h3>Cinemachine</h3><span class="topic-total">5 topics</span></span></summary><div class="topic-content">
 <div class="tablewrap"><table>
 <tr><th>Topic</th><th>Where</th><th>Detail</th></tr>
 <tr><td>Cinematography theory (pan, tilt, roll, Dutch angle)</td><td class="where"><span class="chip"><a href="https://youtu.be/xG6IhaOQ6pU?t=2160">V32 L29</a></span></td><td>00:36–00:46.</td></tr>
@@ -247,7 +410,8 @@ kbd.ar{font-family:var(--ar)}
 <tr><td>Impulse from a trigger in code</td><td class="where"><span class="chip"><a href="https://youtu.be/l3qYLRKpG9c?t=1200">V39 L36</a></span></td><td>00:20–00:32.</td></tr>
 </table></div>
 
-<h3>13. Particle System</h3>
+</div></details>
+<details class="topic-group" id="topic-13"><summary><span class="topic-number">13</span><span><h3>Particle System</h3><span class="topic-total">5 topics</span></span></summary><div class="topic-content">
 <div class="tablewrap"><table>
 <tr><th>Topic</th><th>Where</th><th>Detail</th></tr>
 <tr><td>Particles, CPU vs GPU (VFX Graph), main module, value modes (constant / curve / random)</td><td class="where"><span class="chip"><a href="https://youtu.be/brlccAo6l_A?t=2760">V35 L32</a></span></td><td>00:46–02:28.</td></tr>
@@ -257,7 +421,8 @@ kbd.ar{font-family:var(--ar)}
 <tr><td>Particle System from C# (Play / Stop on trigger)</td><td class="where"><span class="chip"><a href="https://youtu.be/l3qYLRKpG9c?t=120">V39 L36</a></span></td><td>00:02–00:45.</td></tr>
 </table></div>
 
-<h3>14. Audio</h3>
+</div></details>
+<details class="topic-group" id="topic-14"><summary><span class="topic-number">14</span><span><h3>Audio</h3><span class="topic-total">15 topics</span></span></summary><div class="topic-content">
 <div class="tablewrap"><table>
 <tr><th>Topic</th><th>Where</th><th>Detail</th></tr>
 <tr><td>Sound physics (waves, frequency, hearing range, sampling, bit depth), Audio Listener vs Audio Source, Asset Store import, Force To Mono</td><td class="where"><span class="chip"><a href="https://youtu.be/l3qYLRKpG9c?t=2700">V39 L36</a></span></td><td>00:45–02:08.</td></tr>
@@ -277,7 +442,8 @@ kbd.ar{font-family:var(--ar)}
 <tr><td>Comprehensive effect study, Audio Listener effects and FMOD</td><td class="where">—</td><td>Selected mixer effects are demonstrated in L40–L41. Full effect coverage and FMOD implementation remain future material; FMOD is promised for Unit 3.</td></tr>
 </table></div>
 
-<h3>15. Game culture and design segments (co-instructor Mohammad Al-Titi)</h3>
+</div></details>
+<details class="topic-group" id="topic-15"><summary><span class="topic-number">15</span><span><h3>Game culture and design segments</h3><span class="topic-total">12 topics</span></span></summary><div class="topic-content">
 <div class="tablewrap"><table>
 <tr><th>Game / theme</th><th>Where</th></tr>
 <tr><td>Project Rhombus (Steam) + reaction-time benchmark</td><td class="where"><span class="chip">V08 L6</span></td></tr>
@@ -294,263 +460,408 @@ kbd.ar{font-family:var(--ar)}
 <tr><td>Candy Crush: visual, audio, motion and haptic game juice; anticipation and feedback</td><td class="where"><span class="chip"><a href="https://youtu.be/sKJUf5znH34?t=60">V44 L40</a></span></td></tr>
 </table></div>
 
-<h3>16. Guest sessions</h3>
+</div></details>
+<details class="topic-group" id="topic-16"><summary><span class="topic-number">16</span><span><h3>Guest sessions</h3><span class="topic-total">2 topics</span></span></summary><div class="topic-content">
 <div class="tablewrap"><table>
 <tr><th>Session</th><th>Content</th></tr>
 <tr><td><a href="https://youtu.be/TKEgcGQCptg">V31 Yazan Abbasi, PlinkPlay</a></td><td>Industry size, five publishing paths (web, mobile, PC, console, VR), monetization (ads, IAP, offerwalls), publishers, metrics, the PlinkPlay story, long Q&amp;A. No engine content.</td></tr>
 <tr><td><a href="https://youtu.be/zlO8OCH28Sc">V40 Rasheed Abu Eideh</a></td><td>Career story, X-Bugs, "Liyla and the Shadows of War", design philosophy of "Dreams on a Pillow", live gameplay, Q&amp;A. No engine content.</td></tr>
 </table></div>
 
-<h3>17. Unit 1 final project (repeated in almost every lecture from L21)</h3>
+</div></details>
+<details class="topic-group" id="topic-17"><summary><span class="topic-number">17</span><span><h3>Unit 1 final project</h3><span class="topic-total">Requirements & clarification</span></span></summary><div class="topic-content">
 <p>2D platformer, Tilemaps mandatory, pixel art preferred, Arabic text required, must use physics, keyboard movement, lighting and shadows, sound, particles, Cinemachine follow plus camera shake, UI; WebGL build on itch.io at 1280×720. Design-track deadline 30 Aug 2026; the technical-track deadline was still being extended in L34–L35. Full spec: <a href="https://youtu.be/qkiShp9dGZg?t=1260">V30 L28 00:21–00:36</a>; rules and defense: <a href="https://youtu.be/jcmVSSk2-U4">V36 L33 00:00–00:08</a>.</p>
 
 <p class="note">Later clarification: <a href="https://youtu.be/sKJUf5znH34?t=1200">L40 00:20</a> exempts that day's advanced mixer work from the WebGL project requirement. <a href="https://youtu.be/smDlhiMGsHI?t=8160">L41 02:16</a> accepts separate homework for advanced topics when they do not fit the final game. No new project deadline is stated in either recording.</p>
 
-<h2 id="pending">Still pending in Unit 1 (from the last agenda docs)</h2>
-<p>As of <a href="#v45">L41</a>, Fixed Joint 2D and Distance Joint 2D have been taught; the other joints and Effectors remain. The latest agenda also lists further Cinemachine multi-camera work, parent/child operations through Transform, runtime collider adjustments, the Input System with mouse input, coin/climbing/shooting mechanics (object pooling), Trail Renderer, blend trees, 2D rigging and IK, parallax, Sprite Mask and UI Masks, post-processing, persistent managers, sprite optimisation, WebGL build and itch.io upload. These are remaining roadmap items, even where an earlier lecture introduced related basics.</p>
-<p>Audio continued after L39: <a href="#v44">L40</a> covers mixer routing, effects, Views, Snapshots and a piano; <a href="#v45">L41</a> adds footsteps and trigger sounds. The L40 controller is not a persistent manager. At L41 02:16, the instructor accepts separate homework for upcoming advanced topics when they do not fit a student's final game. Unit 2 is deeper C#; Unity 3D is explicitly promised for Unit 3.</p>
+</div></details>
 
-<h2 id="lectures">Lecture by lecture</h2>
-<p>Each card shows the agenda document as it looked the <em>last</em> time it was on screen in that recording, then what the transcript shows was actually taught. Colour reflects the state at that last showing combined with the transcript.</p>
-<div class="legend"><span class="l-done">covered in this lecture</span><span class="l-over">announced, pushed to a later lecture</span><span class="l-red">marked red by the instructor (not covered)</span><span class="l-grey">greyed out in the doc (future)</span></div>
+    <div class="empty-state" id="topics-empty" hidden><h3>No matching topics</h3><p>Try a shorter term, or check the Lectures view for matches in the full agendas.</p><button type="button" class="soft-button" data-reset>Clear search</button></div>
+    <details class="reading-guide"><summary>How to read the topic references</summary><p><b>V07</b> means video 7 in the playlist. <b>L5</b> means Lecture 5 in the video title. Lecture references point to where a topic was actually taught. Timestamps are approximate and open on YouTube.</p></details>
+  </section>
+  <section class="view" id="lectures" aria-labelledby="lectures-heading"><h2 id="lectures-heading">Lecture by lecture</h2><p>Browse the recordings in course order. Open a lecture for the instructor’s agenda and what was actually covered.</p>
+    <div class="toolbar js-only"><div class="toolbar-group"><label for="lecture-filter">Show</label><select id="lecture-filter"><option value="all">All videos</option><option value="unwatched">Not watched</option><option value="watched">Watched</option><option value="guest">Guest sessions</option></select><label for="lecture-sort">Order</label><select id="lecture-sort"><option value="oldest">Course order</option><option value="newest">Newest first</option></select></div><div class="toolbar-group"><button type="button" class="text-button" data-expand="lectures">Expand all</button><button type="button" class="text-button" data-collapse="lectures">Collapse all</button></div></div>
+    <div class="toolbar js-only"><span class="result-count" id="lecture-results">45 videos</span><span class="result-count" id="mobile-progress">0 watched</span></div>
+    <div class="reading-guide agenda-guide" role="note" aria-label="Agenda colour guide"><p class="lab">Agenda colour guide</p><div class="legend"><span class="l-done">Teal · Covered in this lecture</span><span class="l-over">Amber · Announced or carried over</span><span class="l-red">Red · Instructor’s mark; may emphasise a requirement</span><span class="l-grey">Grey · Future item in the agenda document</span></div><p class="note">Red marks alone do not establish coverage. Check “Covered” for what was actually taught.</p></div>
+    <details class="reading-guide"><summary>Lecture numbering &amp; video links</summary><p><b>V</b> = playlist position; <b>L</b> = lecture number. Each agenda reflects its last verified on-screen view.</p><p>“Watch” opens the original agenda timestamp where available; “Watch from start” begins the recording.</p></details>
+    <div id="lecture-list"><details class="lec" id="v01" data-video="01"><summary><span class="n">V01</span><span class="t">Game Development Awareness Session<small>1:58</small><span class="lecture-preview">Gaza Sky Geeks intro, instructor bio, course structure (8 months, dev track vs art/design track), admission and laptop specs.</span></span><span class="d"><a href="https://youtu.be/kxb-fcH8gRk">Watch ↗</a></span></summary><div class="body">
+<div><p class="lab">Covered</p><ul class="cov"><li>Gaza Sky Geeks intro, instructor bio, course structure (8 months, dev track vs art/design track), admission and laptop specs.</li><li>AI in the course, alumni testimonials, logistics (two 2-hour Zoom sessions per week).</li></ul></div>
+<div><p class="lab">Agenda doc</p><p class="none">None. Pre-course marketing session with slides on "why learn game development" from 01:32.</p></div></div></details>
 
-<details class="lec"><summary><span class="n">V01</span><span class="t">Game Development Awareness Session<small>1:58</small></span><span class="d"><a href="https://youtu.be/kxb-fcH8gRk">open</a></span></summary><div class="body">
-<div><p class="lab">Agenda doc</p><p class="none">None. Pre-course marketing session with slides on "why learn game development" from 01:32.</p></div>
-<div><p class="lab">Covered</p><ul class="cov"><li>Gaza Sky Geeks intro, instructor bio, course structure (8 months, dev track vs art/design track), admission and laptop specs.</li><li>AI in the course, alumni testimonials, logistics (two 2-hour Zoom sessions per week).</li></ul></div></div></details>
+<details class="lec" id="v02" data-video="02"><summary><span class="n">V02</span><span class="t">Course Onboarding, Lecture 0<small>2:12</small><span class="lecture-preview">Commitment (72 lectures × 2 h), four pillars (Unity, C#, Git, game design), rules, Classroom / Telegram / Discord, attendance, game jam video.</span></span><span class="d"><a href="https://youtu.be/cRCJfM6IDmw">Watch ↗</a></span></summary><div class="body">
+<div><p class="lab">Covered</p><ul class="cov"><li>Commitment (72 lectures × 2 h), four pillars (Unity, C#, Git, game design), rules, Classroom / Telegram / Discord, attendance, game jam video.</li><li>Full Track A syllabus preview (01:27–01:40).</li><li>Unity Hub and Unity 6000.4.3 install, project creation (01:44–02:12).</li></ul><p class="note">Carried over: VS Code install (done in L2).</p></div>
+<div><p class="lab">Agenda doc</p><p class="none">None ("no slides"). Verbal: talk about the course, how to learn, install Unity and VS Code before Saturday.</p></div></div></details>
 
-<details class="lec"><summary><span class="n">V02</span><span class="t">Course Onboarding, Lecture 0<small>2:12</small></span><span class="d"><a href="https://youtu.be/cRCJfM6IDmw">open</a></span></summary><div class="body">
-<div><p class="lab">Agenda doc</p><p class="none">None ("no slides"). Verbal: talk about the course, how to learn, install Unity and VS Code before Saturday.</p></div>
-<div><p class="lab">Covered</p><ul class="cov"><li>Commitment (72 lectures × 2 h), four pillars (Unity, C#, Git, game design), rules, Classroom / Telegram / Discord, attendance, game jam video.</li><li>Full Track A syllabus preview (01:27–01:40).</li><li>Unity Hub and Unity 6000.4.3 install, project creation (01:44–02:12).</li></ul><p class="note">Carried over: VS Code install (done in L2).</p></div></div></details>
-
-<details class="lec"><summary><span class="n">V03</span><span class="t">Lecture 1<small>2:41 · last agenda view 01:53:09</small></span><span class="d"><a href="https://youtu.be/MlA4UMZlChM?t=6789">open</a></span></summary><div class="body">
+<details class="lec" id="v03" data-video="03"><summary><span class="n">V03</span><span class="t">Lecture 1<small>2:41 · last agenda view 01:53:09</small><span class="lecture-preview">New project in Hub, project folder on disk, editor layout, Hierarchy as family tree, scenes, GameObject → Component → Property ladder.</span></span><span class="d"><a href="https://youtu.be/MlA4UMZlChM?t=6789">Watch ↗</a></span></summary><div class="body">
+<div><p class="lab">Covered</p><ul class="cov"><li>New project in Hub, project folder on disk, editor layout, Hierarchy as family tree, scenes, GameObject → Component → Property ladder.</li><li>Built "Haj Subhi" from primitive sprites: move / scale / rotate tools, duplicate, Order in Layer, Empty Parent, saving.</li><li>Assignment 1: rebuild a 2D character from primitives, named and grouped.</li></ul></div>
 <div><p class="lab">Agenda doc (14 items)</p><ul class="agenda">
 <li><span class="ar">فتح مشروع يونيتي 2D</span> Open a 2D Unity project</li><li><span class="ar">فهم مكان المشروع على الهارديسك</span> Where the project lives on disk</li><li>What a Scene is</li><li>Scene View and how to use it</li><li>What a GameObject is</li><li>Hierarchy and how to use it</li><li class="red">GameObject hierarchy / nesting</li><li class="red">Inspector and how to use it</li><li>What a Component is</li><li class="red">Transform Component</li><li class="red">Brief on the Sprite Component</li><li>Project Window</li><li>How Unity stores files on disk (very simple)</li><li class="red">Homework</li></ul>
-<p class="note">Red = items he coloured red at 01:53. The Inspector, Transform and nested parents were explicitly deferred to L2.</p></div>
-<div><p class="lab">Covered</p><ul class="cov"><li>New project in Hub, project folder on disk, editor layout, Hierarchy as family tree, scenes, GameObject → Component → Property ladder.</li><li>Built "Haj Subhi" from primitive sprites: move / scale / rotate tools, duplicate, Order in Layer, Empty Parent, saving.</li><li>Assignment 1: rebuild a 2D character from primitives, named and grouped.</li></ul></div></div></details>
+<p class="note">Red = items he coloured red at 01:53. The Inspector, Transform and nested parents were explicitly deferred to L2.</p></div></div></details>
 
-<details class="lec"><summary><span class="n">V04</span><span class="t">Lecture 2<small>2:20 · agenda shown only 00:03–00:05</small></span><span class="d"><a href="https://youtu.be/OZIQpBduiWY?t=282">open</a></span></summary><div class="body">
+<details class="lec" id="v04" data-video="04"><summary><span class="n">V04</span><span class="t">Lecture 2<small>2:20 · agenda shown only 00:03–00:05</small><span class="lecture-preview">Unity versions and LTS, Rect tool, pivot vs origin, rotation on Z, tool shortcuts, custom pivot via Sprite Editor, Center vs Pivot toggle.</span></span><span class="d"><a href="https://youtu.be/OZIQpBduiWY?t=282">Watch ↗</a></span></summary><div class="body">
+<div><p class="lab">Covered</p><ul class="cov"><li>Unity versions and LTS, Rect tool, pivot vs origin, rotation on Z, tool shortcuts, custom pivot via Sprite Editor, Center vs Pivot toggle.</li><li>VS Code + .NET SDK + Unity extension install; external editor setting; first script printing to the Console.</li></ul><p class="note">Carried over: Scale (to L3, then L4, then L5), pivot of a parent object, Inspector details.</p></div>
 <div><p class="lab">Agenda doc (10 items)</p><ul class="agenda">
-<li>Working with the Hierarchy</li><li>Working with the Scene View</li><li>Deeper understanding of the GameObject</li><li>GameObject hierarchy / nesting</li><li>Working with the Inspector</li><li class="over">Transform Component</li><li>Simple use of the Project Window</li><li>Install VS Code</li><li>Add a C# script to a GameObject</li><li class="red">Homework 2 (red in the doc = to be assigned)</li></ul></div>
-<div><p class="lab">Covered</p><ul class="cov"><li>Unity versions and LTS, Rect tool, pivot vs origin, rotation on Z, tool shortcuts, custom pivot via Sprite Editor, Center vs Pivot toggle.</li><li>VS Code + .NET SDK + Unity extension install; external editor setting; first script printing to the Console.</li></ul><p class="note">Carried over: Scale (to L3, then L4, then L5), pivot of a parent object, Inspector details.</p></div></div></details>
+<li>Working with the Hierarchy</li><li>Working with the Scene View</li><li>Deeper understanding of the GameObject</li><li>GameObject hierarchy / nesting</li><li>Working with the Inspector</li><li class="over">Transform Component</li><li>Simple use of the Project Window</li><li>Install VS Code</li><li>Add a C# script to a GameObject</li><li class="red">Homework 2 (red in the doc = to be assigned)</li></ul></div></div></details>
 
-<details class="lec"><summary><span class="n">V05</span><span class="t">Lecture 3<small>2:05 · last agenda view 02:02:50</small></span><span class="d"><a href="https://youtu.be/4dVRQoPtuOs?t=7370">open</a></span></summary><div class="body">
+<details class="lec" id="v05" data-video="05"><summary><span class="n">V05</span><span class="t">Lecture 3<small>2:05 · last agenda view 02:02:50</small><span class="lecture-preview">Scene-view navigation, Global vs Local axes, grid size, grid / increment / angle / scale snapping, snapping shortcuts, vertex and pivot snapping.</span></span><span class="d"><a href="https://youtu.be/4dVRQoPtuOs?t=7370">Watch ↗</a></span></summary><div class="body">
+<div><p class="lab">Covered</p><ul class="cov"><li>Scene-view navigation, Global vs Local axes, grid size, grid / increment / angle / scale snapping, snapping shortcuts, vertex and pivot snapping.</li><li>Clock homework walkthrough: sprite import, pivot Bottom Center, script with transform.Rotate(0,0,-0.1f) in Update.</li></ul><p class="note">Carried over: everything from Game View to Variables (done in L4–L5).</p></div>
 <div><p class="lab">Agenda doc (9 items)</p><ul class="agenda">
-<li><span class="sec">Unity</span>Deeper look at the Scene View</li><li class="over">Game View</li><li class="over">Intro to Main Camera</li><li class="over">Scale, part 1</li><li class="over"><span class="sec">C#</span>Complete VS Code settings</li><li class="over">Data Types</li><li class="over">Variables</li><li>Move and rotate a GameObject (only transform.Rotate shown)</li><li>Homework 3</li></ul><p class="note">No colour marks; the doc was simply scrolled to items 4–9 at the end.</p></div>
-<div><p class="lab">Covered</p><ul class="cov"><li>Scene-view navigation, Global vs Local axes, grid size, grid / increment / angle / scale snapping, snapping shortcuts, vertex and pivot snapping.</li><li>Clock homework walkthrough: sprite import, pivot Bottom Center, script with transform.Rotate(0,0,-0.1f) in Update.</li></ul><p class="note">Carried over: everything from Game View to Variables (done in L4–L5).</p></div></div></details>
+<li><span class="sec">Unity</span>Deeper look at the Scene View</li><li class="over">Game View</li><li class="over">Intro to Main Camera</li><li class="over">Scale, part 1</li><li class="over"><span class="sec">C#</span>Complete VS Code settings</li><li class="over">Data Types</li><li class="over">Variables</li><li>Move and rotate a GameObject (only transform.Rotate shown)</li><li>Homework 3</li></ul><p class="note">No colour marks; the doc was simply scrolled to items 4–9 at the end.</p></div></div></details>
 
-<details class="lec"><summary><span class="n">V06</span><span class="t">Lecture 4<small>2:32 · last agenda view 01:52:17</small></span><span class="d"><a href="https://youtu.be/4MR7Nk0WBK8?t=6737">open</a></span></summary><div class="body">
+<details class="lec" id="v06" data-video="06"><summary><span class="n">V06</span><span class="t">Lecture 4<small>2:32 · last agenda view 01:52:17</small><span class="lecture-preview">Main Camera components: Z = -10, Base vs Overlay, perspective vs orthographic, FOV and focal length, orthographic size, clipping planes,…</span></span><span class="d"><a href="https://youtu.be/4MR7Nk0WBK8?t=6737">Watch ↗</a></span></summary><div class="body">
+<div><p class="lab">Covered</p><ul class="cov"><li>Main Camera components: Z = -10, Base vs Overlay, perspective vs orthographic, FOV and focal length, orthographic size, clipping planes, background type.</li><li>Game view toolbar, simulator, aspect presets, scale, play focused/maximized.</li><li>VS Code auto-save and formatter; int / float / double, memory sizes, f suffix, + − ×.</li></ul><p class="note">Homework rule: camera background must be Solid Color from now on.</p></div>
 <div><p class="lab">Agenda doc (10 items)</p><ul class="agenda">
-<li><span class="sec">Unity</span>Intro to Main Camera</li><li>Game View</li><li class="over">Scale, part 1 (bold in the doc, but postponed in the lecture)</li><li><span class="sec">C#</span>Complete VS Code settings</li><li>Data Types</li><li>Variables</li><li class="over">Move and rotate a GameObject</li><li class="red">If statement</li><li class="red">Input</li><li>Homework 4</li></ul></div>
-<div><p class="lab">Covered</p><ul class="cov"><li>Main Camera components: Z = -10, Base vs Overlay, perspective vs orthographic, FOV and focal length, orthographic size, clipping planes, background type.</li><li>Game view toolbar, simulator, aspect presets, scale, play focused/maximized.</li><li>VS Code auto-save and formatter; int / float / double, memory sizes, f suffix, + − ×.</li></ul><p class="note">Homework rule: camera background must be Solid Color from now on.</p></div></div></details>
+<li><span class="sec">Unity</span>Intro to Main Camera</li><li>Game View</li><li class="over">Scale, part 1 (bold in the doc, but postponed in the lecture)</li><li><span class="sec">C#</span>Complete VS Code settings</li><li>Data Types</li><li>Variables</li><li class="over">Move and rotate a GameObject</li><li class="red">If statement</li><li class="red">Input</li><li>Homework 4</li></ul></div></div></details>
 
-<details class="lec"><summary><span class="n">V07</span><span class="t">Lecture 5<small>2:09 · last agenda view 02:08:59</small></span><span class="d"><a href="https://youtu.be/W-ZmEBrctWY?t=7739">open</a></span></summary><div class="body">
+<details class="lec" id="v07" data-video="07"><summary><span class="n">V07</span><span class="t">Lecture 5<small>2:09 · last agenda view 02:08:59</small><span class="lecture-preview">Scale vs pivot math, Sprite Editor pivot, why every sprite is 1 unit; long pixel / RGB digression.</span></span><span class="d"><a href="https://youtu.be/W-ZmEBrctWY?t=7739">Watch ↗</a></span></summary><div class="body">
+<div><p class="lab">Covered</p><ul class="cov"><li>Scale vs pivot math, Sprite Editor pivot, why every sprite is 1 unit; long pixel / RGB digression.</li><li>Numeric types recap, integer vs float division, modulo, comparison operators, &amp;&amp; || !, truth tables printed to the Console.</li></ul><p class="note">Carried over: Scale part 2 (parent/child) to L6; if, input and deltaTime kept slipping until L8–L9.</p></div>
 <div><p class="lab">Agenda doc (8 items)</p><ul class="agenda">
-<li><span class="sec">Unity</span>Scale, part 1</li><li><span class="sec">C#</span>Complete Data Types</li><li>Division</li><li class="over">Move and rotate a GameObject</li><li class="over">If statement</li><li class="over">Keyboard Input</li><li class="over">Time.deltaTime (grey-highlighted in the doc)</li><li>Homework 5</li></ul></div>
-<div><p class="lab">Covered</p><ul class="cov"><li>Scale vs pivot math, Sprite Editor pivot, why every sprite is 1 unit; long pixel / RGB digression.</li><li>Numeric types recap, integer vs float division, modulo, comparison operators, &amp;&amp; || !, truth tables printed to the Console.</li></ul><p class="note">Carried over: Scale part 2 (parent/child) to L6; if, input and deltaTime kept slipping until L8–L9.</p></div></div></details>
+<li><span class="sec">Unity</span>Scale, part 1</li><li><span class="sec">C#</span>Complete Data Types</li><li>Division</li><li class="over">Move and rotate a GameObject</li><li class="over">If statement</li><li class="over">Keyboard Input</li><li class="over">Time.deltaTime (grey-highlighted in the doc)</li><li>Homework 5</li></ul></div></div></details>
 
-<details class="lec"><summary><span class="n">V08</span><span class="t">Lecture 6<small>2:24 · last agenda view 02:11:20</small></span><span class="d"><a href="https://youtu.be/H0X5bdP-9T8?t=7880">open</a></span></summary><div class="body">
+<details class="lec" id="v08" data-video="08"><summary><span class="n">V08</span><span class="t">Lecture 6<small>2:24 · last agenda view 02:11:20</small><span class="lecture-preview">File &gt; New Scene templates (Lit 2D URP), multi-select rotate / scale in Center vs Pivot mode, parent–child transform inheritance.</span></span><span class="d"><a href="https://youtu.be/H0X5bdP-9T8?t=7880">Watch ↗</a></span></summary><div class="body">
+<div><p class="lab">Covered</p><ul class="cov"><li>File &gt; New Scene templates (Lit 2D URP), multi-select rotate / scale in Center vs Pivot mode, parent–child transform inheritance.</li><li>Console in full: print vs Debug.Log, warnings and errors, filters, editor log, collapse, clear on play.</li><li>Guest: Project Rhombus (Steam) assignment. Strings: concatenation and $-interpolation.</li></ul><p class="note">Carried over: Inspector (marked red, done in L7). "We didn't manage the whole agenda."</p></div>
 <div><p class="lab">Agenda doc (10 items)</p><ul class="agenda">
-<li><span class="sec">Unity</span>Review Center and Pivot again</li><li>Scale, part 2</li><li class="red">Inspector</li><li>Console</li><li><span class="sec">C#</span>Data Types: string (highlighted)</li><li class="over">Move a GameObject</li><li class="over">If statement</li><li class="over">Keyboard Input</li><li>Homework 6</li><li><span class="sec">Video-game culture</span>Game assignment 1</li></ul></div>
-<div><p class="lab">Covered</p><ul class="cov"><li>File &gt; New Scene templates (Lit 2D URP), multi-select rotate / scale in Center vs Pivot mode, parent–child transform inheritance.</li><li>Console in full: print vs Debug.Log, warnings and errors, filters, editor log, collapse, clear on play.</li><li>Guest: Project Rhombus (Steam) assignment. Strings: concatenation and $-interpolation.</li></ul><p class="note">Carried over: Inspector (marked red, done in L7). "We didn't manage the whole agenda."</p></div></div></details>
+<li><span class="sec">Unity</span>Review Center and Pivot again</li><li>Scale, part 2</li><li class="red">Inspector</li><li>Console</li><li><span class="sec">C#</span>Data Types: string (highlighted)</li><li class="over">Move a GameObject</li><li class="over">If statement</li><li class="over">Keyboard Input</li><li>Homework 6</li><li><span class="sec">Video-game culture</span>Game assignment 1</li></ul></div></div></details>
 
-<details class="lec"><summary><span class="n">V09</span><span class="t">Lecture 7<small>2:13 · last agenda view 01:34:04</small></span><span class="d"><a href="https://youtu.be/-BTuniOObno?t=5644">open</a></span></summary><div class="body">
+<details class="lec" id="v09" data-video="09"><summary><span class="n">V09</span><span class="t">Lecture 7<small>2:13 · last agenda view 01:34:04</small><span class="lecture-preview">Inspector in full: header, enable/disable vs eye icon, lock, multiple inspectors, debug mode, ping, component reset / copy / paste values,…</span></span><span class="d"><a href="https://youtu.be/-BTuniOObno?t=5644">Watch ↗</a></span></summary><div class="body">
+<div><p class="lab">Covered</p><ul class="cov"><li>Inspector in full: header, enable/disable vs eye icon, lock, multiple inspectors, debug mode, ping, component reset / copy / paste values, presets, docs button, Scene overlays.</li><li>Global vs local variables, initialisation rules, camelCase vs PascalCase, [SerializeField], play-mode values are not saved.</li></ul><p class="note">No homework this lecture. If / input / methods still pending.</p></div>
 <div><p class="lab">Agenda doc (10 items)</p><ul class="agenda">
-<li><span class="sec">Unity</span>Inspector</li><li>Overlays</li><li><span class="sec">C#</span>Member variables (instance fields)</li><li>Local variables</li><li>Variable naming convention</li><li class="over">If statement</li><li class="over">Keyboard input</li><li class="over">Methods</li><li>Homework 7</li><li>Shared homework: create a YouTube channel</li></ul></div>
-<div><p class="lab">Covered</p><ul class="cov"><li>Inspector in full: header, enable/disable vs eye icon, lock, multiple inspectors, debug mode, ping, component reset / copy / paste values, presets, docs button, Scene overlays.</li><li>Global vs local variables, initialisation rules, camelCase vs PascalCase, [SerializeField], play-mode values are not saved.</li></ul><p class="note">No homework this lecture. If / input / methods still pending.</p></div></div></details>
+<li><span class="sec">Unity</span>Inspector</li><li>Overlays</li><li><span class="sec">C#</span>Member variables (instance fields)</li><li>Local variables</li><li>Variable naming convention</li><li class="over">If statement</li><li class="over">Keyboard input</li><li class="over">Methods</li><li>Homework 7</li><li>Shared homework: create a YouTube channel</li></ul></div></div></details>
 
-<details class="lec"><summary><span class="n">V10</span><span class="t">Lecture 8<small>2:22 · last agenda view 02:17:10</small></span><span class="d"><a href="https://youtu.be/g-J_KvE-HLo?t=8230">open</a></span></summary><div class="body">
+<details class="lec" id="v10" data-video="10"><summary><span class="n">V10</span><span class="t">Lecture 8<small>2:22 · last agenda view 02:17:10</small><span class="lecture-preview">Guest: N v2 / N++ and copyright. YouTube-channel homework.</span></span><span class="d"><a href="https://youtu.be/g-J_KvE-HLo?t=8230">Watch ↗</a></span></summary><div class="body">
+<div><p class="lab">Covered</p><ul class="cov"><li>Guest: N v2 / N++ and copyright. YouTube-channel homework.</li><li>Stats window and FPS, Update per frame, frame-rate independence via 1/FPS, Time.deltaTime, computing FPS from deltaTime.</li><li>if / else / else-if with the Tawjihi-grades script.</li></ul><p class="note">"I didn't finish much of the agenda." Methods to next time.</p></div>
 <div><p class="lab">Agenda doc (8 items, edited during the lecture)</p><ul class="agenda">
-<li><span class="sec">Game culture</span>Shared homework between tracks #2 (N v2)</li><li>Shared homework between tracks: YouTube channel</li><li><span class="sec">C#</span>Time.deltaTime (bold at the end)</li><li>If statement</li><li class="over">Keyboard Input</li><li class="over">Move a GameObject from the keyboard</li><li class="over">Methods</li><li>Homework 7</li></ul></div>
-<div><p class="lab">Covered</p><ul class="cov"><li>Guest: N v2 / N++ and copyright. YouTube-channel homework.</li><li>Stats window and FPS, Update per frame, frame-rate independence via 1/FPS, Time.deltaTime, computing FPS from deltaTime.</li><li>if / else / else-if with the Tawjihi-grades script.</li></ul><p class="note">"I didn't finish much of the agenda." Methods to next time.</p></div></div></details>
+<li><span class="sec">Game culture</span>Shared homework between tracks #2 (N v2)</li><li>Shared homework between tracks: YouTube channel</li><li><span class="sec">C#</span>Time.deltaTime (bold at the end)</li><li>If statement</li><li class="over">Keyboard Input</li><li class="over">Move a GameObject from the keyboard</li><li class="over">Methods</li><li>Homework 7</li></ul></div></div></details>
 
-<details class="lec"><summary><span class="n">V11</span><span class="t">Lecture 9<small>2:08 · last agenda view 02:08:16</small></span><span class="d"><a href="https://youtu.be/8APVTuMdktw?t=7696">open</a></span></summary><div class="body">
+<details class="lec" id="v11" data-video="11"><summary><span class="n">V11</span><span class="t">Lecture 9<small>2:08 · last agenda view 02:08:16</small><span class="lecture-preview">Countdown timer with deltaTime and Mathf.Floor/Ceil; Keyboard.current input; clock hand rotates while space is held.</span></span><span class="d"><a href="https://youtu.be/8APVTuMdktw?t=7696">Watch ↗</a></span></summary><div class="body">
+<div><p class="lab">Covered</p><ul class="cov"><li>Countdown timer with deltaTime and Mathf.Floor/Ceil; Keyboard.current input; clock hand rotates while space is held.</li><li>Car moved with arrows and rotated with A/D, multiplied by smoothDeltaTime; Space.World vs Space.Self with an inspector dropdown.</li><li>isPressed vs wasPressedThisFrame vs wasReleasedThisFrame.</li></ul><p class="note">Last lecture before Eid; one combined homework. Methods "big topic, next time".</p></div>
 <div><p class="lab">Agenda doc (11 items)</p><ul class="agenda">
-<li><span class="sec">C#</span>Keyboard Input</li><li>Keyboard.current.spaceKey.wasPressedThisFrame</li><li>Move a GameObject from the keyboard</li><li>transform.Translate, Global and Local</li><li class="over">Methods</li><li class="over">Awake()</li><li class="over">GetComponent&lt;SpriteRenderer&gt;</li><li class="over">Changing sprite colour</li><li class="over"><span class="sec">Unity</span>Colliders2D</li><li class="over">RigidBody2D</li><li class="over">Physics Material 2D</li></ul></div>
-<div><p class="lab">Covered</p><ul class="cov"><li>Countdown timer with deltaTime and Mathf.Floor/Ceil; Keyboard.current input; clock hand rotates while space is held.</li><li>Car moved with arrows and rotated with A/D, multiplied by smoothDeltaTime; Space.World vs Space.Self with an inspector dropdown.</li><li>isPressed vs wasPressedThisFrame vs wasReleasedThisFrame.</li></ul><p class="note">Last lecture before Eid; one combined homework. Methods "big topic, next time".</p></div></div></details>
+<li><span class="sec">C#</span>Keyboard Input</li><li>Keyboard.current.spaceKey.wasPressedThisFrame</li><li>Move a GameObject from the keyboard</li><li>transform.Translate, Global and Local</li><li class="over">Methods</li><li class="over">Awake()</li><li class="over">GetComponent&lt;SpriteRenderer&gt;</li><li class="over">Changing sprite colour</li><li class="over"><span class="sec">Unity</span>Colliders2D</li><li class="over">RigidBody2D</li><li class="over">Physics Material 2D</li></ul></div></div></details>
 
-<details class="lec"><summary><span class="n">V12</span><span class="t">Lecture 10<small>2:28 · last agenda view 00:46:18</small></span><span class="d"><a href="https://youtu.be/9UVWxodi5uk?t=2778">open</a></span></summary><div class="body">
+<details class="lec" id="v12" data-video="12"><summary><span class="n">V12</span><span class="t">Lecture 10<small>2:28 · last agenda view 00:46:18</small><span class="lecture-preview">Guest: four game-design pillars, Chrome Dino. Long "are programmers obsolete" digression.</span></span><span class="d"><a href="https://youtu.be/9UVWxodi5uk?t=2778">Watch ↗</a></span></summary><div class="body">
+<div><p class="lab">Covered</p><ul class="cov"><li>Guest: four game-design pillars, Chrome Dino. Long "are programmers obsolete" digression.</li><li>Methods end to end: salary example, parameters, return values, void, one responsibility per method, CodeLens, ++ / += / prefix vs postfix.</li></ul><p class="note">Entire Unity half not reached.</p></div>
 <div><p class="lab">Agenda doc (8 items)</p><ul class="agenda">
-<li><span class="sec">Game culture</span>Shared homework (Chrome Dino)</li><li><span class="sec">C#</span>Methods / functions (highlighted)</li><li class="over">Awake()</li><li class="over">GetComponent&lt;SpriteRenderer&gt;</li><li class="over">Changing sprite colour</li><li class="over"><span class="sec">Unity physics engine</span>Colliders 2D</li><li class="over">RigidBody 2D</li><li class="over">Physics Material 2D</li></ul></div>
-<div><p class="lab">Covered</p><ul class="cov"><li>Guest: four game-design pillars, Chrome Dino. Long "are programmers obsolete" digression.</li><li>Methods end to end: salary example, parameters, return values, void, one responsibility per method, CodeLens, ++ / += / prefix vs postfix.</li></ul><p class="note">Entire Unity half not reached.</p></div></div></details>
+<li><span class="sec">Game culture</span>Shared homework (Chrome Dino)</li><li><span class="sec">C#</span>Methods / functions (highlighted)</li><li class="over">Awake()</li><li class="over">GetComponent&lt;SpriteRenderer&gt;</li><li class="over">Changing sprite colour</li><li class="over"><span class="sec">Unity physics engine</span>Colliders 2D</li><li class="over">RigidBody 2D</li><li class="over">Physics Material 2D</li></ul></div></div></details>
 
-<details class="lec"><summary><span class="n">V13</span><span class="t">Lecture 11<small>2:25 · last agenda view 02:02:00</small></span><span class="d"><a href="https://youtu.be/lnwid3rFofI?t=7320">open</a></span></summary><div class="body">
+<details class="lec" id="v13" data-video="13"><summary><span class="n">V13</span><span class="t">Lecture 11<small>2:25 · last agenda view 02:02:00</small><span class="lecture-preview">Mutating a field inside a method, default values, null; OOP vs procedural; Awake / OnEnable / Start / Update / LateUpdate / OnDisable / OnDestroy…</span></span><span class="d"><a href="https://youtu.be/lnwid3rFofI?t=7320">Watch ↗</a></span></summary><div class="body">
+<div><p class="lab">Covered</p><ul class="cov"><li>Mutating a field inside a method, default values, null; OOP vs procedural; Awake / OnEnable / Start / Update / LateUpdate / OnDisable / OnDestroy demonstrated.</li><li>GetComponent, inheritance chain via decompile, caching in Awake and why (Awake-before-Start guarantee).</li><li>20-minute physics "trailer": squares fall and tumble with Rigidbody2D and colliders, no code.</li></ul><p class="note">Colour theory requested and deferred to L12.</p></div>
 <div><p class="lab">Agenda doc (8 items)</p><ul class="agenda">
-<li><span class="sec">C#</span>Side effects of methods</li><li>Methods vs functions</li><li>Awake() / basic Unity event functions</li><li>GetComponent&lt;SpriteRenderer&gt;</li><li>Changing sprite colour</li><li class="over"><span class="sec">Unity physics engine 2D</span>Colliders 2D (trailer only)</li><li class="over">RigidBody 2D (trailer only)</li><li class="over">Physics Material 2D</li></ul></div>
-<div><p class="lab">Covered</p><ul class="cov"><li>Mutating a field inside a method, default values, null; OOP vs procedural; Awake / OnEnable / Start / Update / LateUpdate / OnDisable / OnDestroy demonstrated.</li><li>GetComponent, inheritance chain via decompile, caching in Awake and why (Awake-before-Start guarantee).</li><li>20-minute physics "trailer": squares fall and tumble with Rigidbody2D and colliders, no code.</li></ul><p class="note">Colour theory requested and deferred to L12.</p></div></div></details>
+<li><span class="sec">C#</span>Side effects of methods</li><li>Methods vs functions</li><li>Awake() / basic Unity event functions</li><li>GetComponent&lt;SpriteRenderer&gt;</li><li>Changing sprite colour</li><li class="over"><span class="sec">Unity physics engine 2D</span>Colliders 2D (trailer only)</li><li class="over">RigidBody 2D (trailer only)</li><li class="over">Physics Material 2D</li></ul></div></div></details>
 
-<details class="lec"><summary><span class="n">V14</span><span class="t">Lecture 12<small>2:26 · agenda shown 00:12–00:14 only</small></span><span class="d"><a href="https://youtu.be/2Qo5nRFj66s?t=766">open</a></span></summary><div class="body">
+<details class="lec" id="v14" data-video="14"><summary><span class="n">V14</span><span class="t">Lecture 12<small>2:26 · agenda shown 00:12–00:14 only</small><span class="lecture-preview">Guest: Crossy Road, voxel vs pixel art. Homework 8 covers L10–L12.</span></span><span class="d"><a href="https://youtu.be/2Qo5nRFj66s?t=766">Watch ↗</a></span></summary><div class="body">
+<div><p class="lab">Covered</p><ul class="cov"><li>Guest: Crossy Road, voxel vs pixel art. Homework 8 covers L10–L12.</li><li>Editor scripting intro with an AI-generated AutoSave script (later retracted).</li><li>Colour theory in depth: wavelengths, subtractive vs additive, RGBA, bits and bytes, binary, hex, Color32, Adobe Color.</li></ul></div>
 <div><p class="lab">Agenda doc (9 items)</p><ul class="agenda">
-<li><span class="sec">Game culture</span>Shared homework (Crossy Road)</li><li class="over"><span class="sec">C#</span>Cinemachine intro</li><li class="over">Vector2</li><li class="over">GetComponent&lt;Rigidbody2D&gt;</li><li class="over">Rigidbody.linearVelocity .x .y</li><li class="over">FixedUpdate()</li><li class="over"><span class="sec">Unity physics engine 2D</span>Colliders 2D</li><li class="over">RigidBody 2D</li><li class="over">Physics Material 2D</li></ul><p class="note">"I promise we won't finish it." He later called the whole lecture unplanned.</p></div>
-<div><p class="lab">Covered</p><ul class="cov"><li>Guest: Crossy Road, voxel vs pixel art. Homework 8 covers L10–L12.</li><li>Editor scripting intro with an AI-generated AutoSave script (later retracted).</li><li>Colour theory in depth: wavelengths, subtractive vs additive, RGBA, bits and bytes, binary, hex, Color32, Adobe Color.</li></ul></div></div></details>
+<li><span class="sec">Game culture</span>Shared homework (Crossy Road)</li><li class="over"><span class="sec">C#</span>Cinemachine intro</li><li class="over">Vector2</li><li class="over">GetComponent&lt;Rigidbody2D&gt;</li><li class="over">Rigidbody.linearVelocity .x .y</li><li class="over">FixedUpdate()</li><li class="over"><span class="sec">Unity physics engine 2D</span>Colliders 2D</li><li class="over">RigidBody 2D</li><li class="over">Physics Material 2D</li></ul><p class="note">"I promise we won't finish it." He later called the whole lecture unplanned.</p></div></div></details>
 
-<details class="lec"><summary><span class="n">V15</span><span class="t">Lecture 13<small>2:29 · last agenda view 00:12:58</small></span><span class="d"><a href="https://youtu.be/Bdhslm6Zkt0?t=778">open</a></span></summary><div class="body">
+<details class="lec" id="v15" data-video="15"><summary><span class="n">V15</span><span class="t">Lecture 13<small>2:29 · last agenda view 00:12:58</small><span class="lecture-preview">Box2D vs PhysX, three conditions for a simulated body, colliders and Edit Collider, Physics Material 2D bounciness and friction, Time Scale.</span></span><span class="d"><a href="https://youtu.be/Bdhslm6Zkt0?t=778">Watch ↗</a></span></summary><div class="body">
+<div><p class="lab">Covered</p><ul class="cov"><li>Box2D vs PhysX, three conditions for a simulated body, colliders and Edit Collider, Physics Material 2D bounciness and friction, Time Scale.</li><li>Rigidbody2D body types Static / Kinematic / Dynamic with performance reasoning, mass, linear and angular damping, gravity scale, constraints.</li></ul><p class="note">The C# half moved to L14. Collision Detection and Interpolate deferred to L16.</p></div>
 <div><p class="lab">Agenda doc (7 items)</p><ul class="agenda">
-<li class="over"><span class="sec">C#</span>Vector2</li><li class="over">GetComponent&lt;Rigidbody2D&gt;</li><li class="over">Rigidbody.linearVelocity .x .y</li><li class="over">FixedUpdate()</li><li><span class="sec">Unity physics engine 2D</span>Colliders 2D (highlighted)</li><li>RigidBody 2D (highlighted)</li><li>Physics Material 2D (highlighted)</li></ul></div>
-<div><p class="lab">Covered</p><ul class="cov"><li>Box2D vs PhysX, three conditions for a simulated body, colliders and Edit Collider, Physics Material 2D bounciness and friction, Time Scale.</li><li>Rigidbody2D body types Static / Kinematic / Dynamic with performance reasoning, mass, linear and angular damping, gravity scale, constraints.</li></ul><p class="note">The C# half moved to L14. Collision Detection and Interpolate deferred to L16.</p></div></div></details>
+<li class="over"><span class="sec">C#</span>Vector2</li><li class="over">GetComponent&lt;Rigidbody2D&gt;</li><li class="over">Rigidbody.linearVelocity .x .y</li><li class="over">FixedUpdate()</li><li><span class="sec">Unity physics engine 2D</span>Colliders 2D (highlighted)</li><li>RigidBody 2D (highlighted)</li><li>Physics Material 2D (highlighted)</li></ul></div></div></details>
 
-<details class="lec"><summary><span class="n">V16</span><span class="t">Lecture 14<small>2:11 · last agenda view 01:45:58</small></span><span class="d"><a href="https://youtu.be/sS8VThikvsY?t=6358">open</a></span></summary><div class="body">
+<details class="lec" id="v16" data-video="16"><summary><span class="n">V16</span><span class="t">Lecture 14<small>2:11 · last agenda view 01:45:58</small><span class="lecture-preview">Transform-vs-Rigidbody conflict, Physics Material friction, Clean Code refactor, comments, deprecated rigidbody property.</span></span><span class="d"><a href="https://youtu.be/sS8VThikvsY?t=6358">Watch ↗</a></span></summary><div class="body">
+<div><p class="lab">Covered</p><ul class="cov"><li>Transform-vs-Rigidbody conflict, Physics Material friction, Clean Code refactor, comments, deprecated rigidbody property.</li><li>Vectors as data: magnitude, scalar and vector arithmetic, constants; rb.linearVelocity in FixedUpdate at 50 Hz.</li></ul></div>
 <div><p class="lab">Agenda doc (12 items, edited live)</p><ul class="agenda">
-<li class="over"><span class="sec">C#</span>namespace (added at 00:02)</li><li>Vector2 and Vector3</li><li>GetComponent&lt;Rigidbody2D&gt;</li><li>linearVelocity</li><li class="over">FixedUpdate() Interpolate, Collision Detection (FixedUpdate covered; the two settings deferred)</li><li class="over">Jumping</li><li class="over">OnCollisionEnter2D</li><li class="over">collision.CompareTag ⇒ bool</li><li class="over">gameObject</li><li class="over">Destroy(collision.gameObject, 1f)</li><li class="over">gameObject.SetActive</li><li class="over">OnTriggerEnter2D</li></ul><p class="note">At the last showing a red line was added under the title: course ends mid-January 2027, not extendable.</p></div>
-<div><p class="lab">Covered</p><ul class="cov"><li>Transform-vs-Rigidbody conflict, Physics Material friction, Clean Code refactor, comments, deprecated rigidbody property.</li><li>Vectors as data: magnitude, scalar and vector arithmetic, constants; rb.linearVelocity in FixedUpdate at 50 Hz.</li></ul></div></div></details>
+<li class="over"><span class="sec">C#</span>namespace (added at 00:02)</li><li>Vector2 and Vector3</li><li>GetComponent&lt;Rigidbody2D&gt;</li><li>linearVelocity</li><li class="over">FixedUpdate() Interpolate, Collision Detection (FixedUpdate covered; the two settings deferred)</li><li class="over">Jumping</li><li class="over">OnCollisionEnter2D</li><li class="over">collision.CompareTag ⇒ bool</li><li class="over">gameObject</li><li class="over">Destroy(collision.gameObject, 1f)</li><li class="over">gameObject.SetActive</li><li class="over">OnTriggerEnter2D</li></ul><p class="note">At the last showing a red line was added under the title: course ends mid-January 2027, not extendable.</p></div></div></details>
 
-<details class="lec"><summary><span class="n">V17</span><span class="t">Lecture 15<small>2:15 · last agenda view 02:15:30</small></span><span class="d"><a href="https://youtu.be/YUpJyY2FYNo?t=8130">open</a></span></summary><div class="body">
+<details class="lec" id="v17" data-video="17"><summary><span class="n">V17</span><span class="t">Lecture 15<small>2:15 · last agenda view 02:15:30</small><span class="lecture-preview">"Sobhi" platformer: arrow-key movement via linearVelocity, jump with space, why input is read in Update, jump tuning vs gravity scale.</span></span><span class="d"><a href="https://youtu.be/YUpJyY2FYNo?t=8130">Watch ↗</a></span></summary><div class="body">
+<div><p class="lab">Covered</p><ul class="cov"><li>"Sobhi" platformer: arrow-key movement via linearVelocity, jump with space, why input is read in Update, jump tuning vs gravity scale.</li><li>OnCollisionEnter/Stay/Exit, layers vs tags (32-layer limit, collision matrix), CompareTag, Destroy variants, trigger finish line.</li></ul></div>
 <div><p class="lab">Agenda doc (10 items)</p><ul class="agenda">
-<li class="over"><span class="sec">C#</span>namespace</li><li class="over">FixedUpdate() Interpolate, Collision Detection</li><li>Jumping</li><li>OnCollisionEnter2D(Collision2D)</li><li>OnTriggerEnter2D(Collider2D)</li><li>collision.CompareTag ⇒ bool</li><li>gameObject</li><li>Destroy(collision.gameObject, 1f)</li><li>gameObject.SetActive</li><li class="over">Physics Material</li></ul></div>
-<div><p class="lab">Covered</p><ul class="cov"><li>"Sobhi" platformer: arrow-key movement via linearVelocity, jump with space, why input is read in Update, jump tuning vs gravity scale.</li><li>OnCollisionEnter/Stay/Exit, layers vs tags (32-layer limit, collision matrix), CompareTag, Destroy variants, trigger finish line.</li></ul></div></div></details>
+<li class="over"><span class="sec">C#</span>namespace</li><li class="over">FixedUpdate() Interpolate, Collision Detection</li><li>Jumping</li><li>OnCollisionEnter2D(Collision2D)</li><li>OnTriggerEnter2D(Collider2D)</li><li>collision.CompareTag ⇒ bool</li><li>gameObject</li><li>Destroy(collision.gameObject, 1f)</li><li>gameObject.SetActive</li><li class="over">Physics Material</li></ul></div></div></details>
 
-<details class="lec"><summary><span class="n">V18</span><span class="t">Lecture 16<small>2:25 · last agenda view 01:38:39</small></span><span class="d"><a href="https://youtu.be/RZuS1ldq1kk?t=5919">open</a></span></summary><div class="body">
+<details class="lec" id="v18" data-video="18"><summary><span class="n">V18</span><span class="t">Lecture 16<small>2:25 · last agenda view 01:38:39</small><span class="lecture-preview">Namespaces, Discrete vs Continuous collision, Interpolate / Extrapolate, Physics Material 2D and friction combine, assets persist in play mode.</span></span><span class="d"><a href="https://youtu.be/RZuS1ldq1kk?t=5919">Watch ↗</a></span></summary><div class="body">
+<div><p class="lab">Covered</p><ul class="cov"><li>Namespaces, Discrete vs Continuous collision, Interpolate / Extrapolate, Physics Material 2D and friction combine, assets persist in play mode.</li><li>Inherited gameObject / transform, Destroy, SetActive, rb.simulated; layers as bits vs tags as strings; tag-based ground check.</li><li>Homework: LinkedIn profile and QWOP.</li></ul></div>
 <div><p class="lab">Agenda doc (16 items)</p><ul class="agenda">
-<li><span class="sec">C#</span>namespace</li><li>FixedUpdate() Interpolate, Collision Detection</li><li>Physics Material</li><li>gameObject and transform</li><li>Destroy(collision.gameObject, 1f)</li><li>gameObject.SetActive</li><li>Rigidbody simulated</li><li>Layers and LayerMask (concept only)</li><li class="over">Physics2D.Raycast</li><li class="over">RaycastHit2D</li><li class="over">Debug.DrawRay</li><li class="over">OnDrawGizmos()</li><li class="over">Gizmos.DrawRay</li><li class="over">OnDrawGizmosSelected()</li><li>Jumping (ground check with tags; double jump unresolved)</li><li class="over">AddForce</li></ul></div>
-<div><p class="lab">Covered</p><ul class="cov"><li>Namespaces, Discrete vs Continuous collision, Interpolate / Extrapolate, Physics Material 2D and friction combine, assets persist in play mode.</li><li>Inherited gameObject / transform, Destroy, SetActive, rb.simulated; layers as bits vs tags as strings; tag-based ground check.</li><li>Homework: LinkedIn profile and QWOP.</li></ul></div></div></details>
+<li><span class="sec">C#</span>namespace</li><li>FixedUpdate() Interpolate, Collision Detection</li><li>Physics Material</li><li>gameObject and transform</li><li>Destroy(collision.gameObject, 1f)</li><li>gameObject.SetActive</li><li>Rigidbody simulated</li><li>Layers and LayerMask (concept only)</li><li class="over">Physics2D.Raycast</li><li class="over">RaycastHit2D</li><li class="over">Debug.DrawRay</li><li class="over">OnDrawGizmos()</li><li class="over">Gizmos.DrawRay</li><li class="over">OnDrawGizmosSelected()</li><li>Jumping (ground check with tags; double jump unresolved)</li><li class="over">AddForce</li></ul></div></div></details>
 
-<details class="lec"><summary><span class="n">V19</span><span class="t">Lecture 17<small>2:10 · last agenda view 01:22:57</small></span><span class="d"><a href="https://youtu.be/K_sjotqt4to?t=4977">open</a></span></summary><div class="body">
+<details class="lec" id="v19" data-video="19"><summary><span class="n">V19</span><span class="t">Lecture 17<small>2:10 · last agenda view 01:22:57</small><span class="lecture-preview">Bit masks with the Windows calculator, GetMask with several layers, LayerMask in the inspector, never call GetMask in Update.</span></span><span class="d"><a href="https://youtu.be/K_sjotqt4to?t=4977">Watch ↗</a></span></summary><div class="body">
+<div><p class="lab">Covered</p><ul class="cov"><li>Bit masks with the Windows calculator, GetMask with several layers, LayerMask in the inspector, never call GetMask in Update.</li><li>Raycasting theory and practice, null checks vs implicit bool, LayerToName / NameToLayer, log2 trick, raycast ground check for a clean jump.</li></ul></div>
 <div><p class="lab">Agenda doc (9 items)</p><ul class="agenda">
-<li><span class="sec">C#</span>Layers and LayerMask, LayerMask.GetMask</li><li>collider.IsTouchingLayers(layer)</li><li>RaycastHit2D, Physics2D.Raycast(origin, direction, length, layer), hit.collider, if (hit) (highlighted)</li><li class="over">Debug.DrawRay (tried, not visible; fixed in L18)</li><li class="over">OnDrawGizmos(), Gizmos.DrawRay, OnDrawGizmosSelected()</li><li>Jumping (enhanced) via raycast</li><li class="over">AddForce, ForceMode2D</li><li class="over">Scene Management</li><li class="over">Prefabs, Instantiate()</li></ul></div>
-<div><p class="lab">Covered</p><ul class="cov"><li>Bit masks with the Windows calculator, GetMask with several layers, LayerMask in the inspector, never call GetMask in Update.</li><li>Raycasting theory and practice, null checks vs implicit bool, LayerToName / NameToLayer, log2 trick, raycast ground check for a clean jump.</li></ul></div></div></details>
+<li><span class="sec">C#</span>Layers and LayerMask, LayerMask.GetMask</li><li>collider.IsTouchingLayers(layer)</li><li>RaycastHit2D, Physics2D.Raycast(origin, direction, length, layer), hit.collider, if (hit) (highlighted)</li><li class="over">Debug.DrawRay (tried, not visible; fixed in L18)</li><li class="over">OnDrawGizmos(), Gizmos.DrawRay, OnDrawGizmosSelected()</li><li>Jumping (enhanced) via raycast</li><li class="over">AddForce, ForceMode2D</li><li class="over">Scene Management</li><li class="over">Prefabs, Instantiate()</li></ul></div></div></details>
 
-<details class="lec"><summary><span class="n">V20</span><span class="t">Lecture 18<small>2:34 · last agenda view 02:27:05</small></span><span class="d"><a href="https://youtu.be/R17YuL0TplM?t=8825">open</a></span></summary><div class="body">
+<details class="lec" id="v20" data-video="20"><summary><span class="n">V20</span><span class="t">Lecture 18<small>2:34 · last agenda view 02:27:05</small><span class="lecture-preview">Guest: Tetris and flow theory. Fixes: Debug.DrawRay needs Gizmos on; OnDrawGizmos runs in edit mode.</span></span><span class="d"><a href="https://youtu.be/R17YuL0TplM?t=8825">Watch ↗</a></span></summary><div class="body">
+<div><p class="lab">Covered</p><ul class="cov"><li>Guest: Tetris and flow theory. Fixes: Debug.DrawRay needs Gizmos on; OnDrawGizmos runs in edit mode.</li><li>Bullet with AddForce: Force vs Impulse, gravity, why platformers use linearVelocity; frog "Subhi" jump, double jump with IsTouchingLayers, fire kill zone via trigger and tag, layer index vs mask.</li><li>SceneManager.LoadScene and Build Profiles.</li></ul></div>
 <div><p class="lab">Agenda doc (7 items)</p><ul class="agenda">
-<li>Shared homework (Tetris)</li><li class="grey">Review (greyed as done): Layers and LayerMask · IsTouchingLayers · Raycast · Debug.DrawRay · OnDrawGizmos · Jumping (enhanced)</li><li>AddForce, ForceMode2D</li><li>Scene Management (introduced; reload froze)</li><li class="over">PlayerPrefs</li><li class="over">Invoke</li><li class="over">UI</li></ul></div>
-<div><p class="lab">Covered</p><ul class="cov"><li>Guest: Tetris and flow theory. Fixes: Debug.DrawRay needs Gizmos on; OnDrawGizmos runs in edit mode.</li><li>Bullet with AddForce: Force vs Impulse, gravity, why platformers use linearVelocity; frog "Subhi" jump, double jump with IsTouchingLayers, fire kill zone via trigger and tag, layer index vs mask.</li><li>SceneManager.LoadScene and Build Profiles.</li></ul></div></div></details>
+<li>Shared homework (Tetris)</li><li class="grey">Review (greyed as done): Layers and LayerMask · IsTouchingLayers · Raycast · Debug.DrawRay · OnDrawGizmos · Jumping (enhanced)</li><li>AddForce, ForceMode2D</li><li>Scene Management (introduced; reload froze)</li><li class="over">PlayerPrefs</li><li class="over">Invoke</li><li class="over">UI</li></ul></div></div></details>
 
-<details class="lec"><summary><span class="n">V21</span><span class="t">Lecture 19<small>2:21 · last agenda view 02:21:45</small></span><span class="d"><a href="https://youtu.be/H5h79SZ_C-4?t=8505">open</a></span></summary><div class="body">
+<details class="lec" id="v21" data-video="21"><summary><span class="n">V21</span><span class="t">Lecture 19<small>2:21 · last agenda view 02:21:45</small><span class="lecture-preview">"Semi-perfect" jump: impulse with velocity reset, faster fall via gravity scale switch, raycast ground check, double jump, refactor into methods,…</span></span><span class="d"><a href="https://youtu.be/H5h79SZ_C-4?t=8505">Watch ↗</a></span></summary><div class="body">
+<div><p class="lab">Covered</p><ul class="cov"><li>"Semi-perfect" jump: impulse with velocity reset, faster fall via gravity scale switch, raycast ground check, double jump, refactor into methods, [Header].</li><li>Invoke / InvokeRepeating / nameof; fire trigger turns the player red and destroys it; scene reload with a delay; Application.Quit.</li></ul></div>
 <div><p class="lab">Agenda doc (6 items)</p><ul class="agenda">
-<li>Perfecting the jump</li><li>Invoke</li><li>Scene Management: LoadScene, GetActiveScene, Application.Quit</li><li class="red">PlayerPrefs</li><li class="red">Sorting Layers</li><li class="red">UI (Canvas)</li></ul><p class="note">He reopened the doc at 02:16 to tick items off and coloured 4–6 red for next time.</p></div>
-<div><p class="lab">Covered</p><ul class="cov"><li>"Semi-perfect" jump: impulse with velocity reset, faster fall via gravity scale switch, raycast ground check, double jump, refactor into methods, [Header].</li><li>Invoke / InvokeRepeating / nameof; fire trigger turns the player red and destroys it; scene reload with a delay; Application.Quit.</li></ul></div></div></details>
+<li>Perfecting the jump</li><li>Invoke</li><li>Scene Management: LoadScene, GetActiveScene, Application.Quit</li><li class="red">PlayerPrefs</li><li class="red">Sorting Layers</li><li class="red">UI (Canvas)</li></ul><p class="note">He reopened the doc at 02:16 to tick items off and coloured 4–6 red for next time.</p></div></div></details>
 
-<details class="lec"><summary><span class="n">V22</span><span class="t">Lecture 20<small>0:52 · last agenda view 00:48:36</small></span><span class="d"><a href="https://youtu.be/TEsZzsH_vpA?t=2916">open</a></span></summary><div class="body">
+<details class="lec" id="v22" data-video="22"><summary><span class="n">V22</span><span class="t">Lecture 20<small>0:52 · last agenda view 00:48:36</small><span class="lecture-preview">Only ~50 minutes (cut short for the Egypt–Argentina match). UI Canvas vs UI Toolkit, Canvas and EventSystem, Image, RectTransform pivot and size,…</span></span><span class="d"><a href="https://youtu.be/TEsZzsH_vpA?t=2916">Watch ↗</a></span></summary><div class="body">
+<div><p class="lab">Covered</p><ul class="cov"><li>Only ~50 minutes (cut short for the Egypt–Argentina match). UI Canvas vs UI Toolkit, Canvas and EventSystem, Image, RectTransform pivot and size, draw order inside a canvas, Raycast Target, TextMeshPro import.</li></ul><p class="note">Anchors deferred to L21, then L22.</p></div>
 <div><p class="lab">Agenda doc (4 items)</p><ul class="agenda">
-<li>Shared homework (Threes)</li><li class="red">PlayerPrefs</li><li class="red">Sorting Layers</li><li>UI (Canvas) (highlighted)</li></ul></div>
-<div><p class="lab">Covered</p><ul class="cov"><li>Only ~50 minutes (cut short for the Egypt–Argentina match). UI Canvas vs UI Toolkit, Canvas and EventSystem, Image, RectTransform pivot and size, draw order inside a canvas, Raycast Target, TextMeshPro import.</li></ul><p class="note">Anchors deferred to L21, then L22.</p></div></div></details>
+<li>Shared homework (Threes)</li><li class="red">PlayerPrefs</li><li class="red">Sorting Layers</li><li>UI (Canvas) (highlighted)</li></ul></div></div></details>
 
-<details class="lec"><summary><span class="n">V23</span><span class="t">Lecture 21<small>2:13</small></span><span class="d"><a href="https://youtu.be/iiYGs0FpbQg">open</a></span></summary><div class="body">
-<div><p class="lab">Agenda doc</p><p class="none">Not shown. Verbal: continue UI Canvas, anchors in detail, finish TextMeshPro.</p></div>
-<div><p class="lab">Covered</p><ul class="cov"><li>Multiple canvases and Sort Order, Render Modes (Overlay / Camera / World Space) with a particle and post-processing preview, Free Aspect and the 1280×720 rule, itch.io vs Steam, Canvas Scaler, Graphic Raycaster.</li><li>TextMeshPro styling, Raw Image with a Render Texture minimap, Button component transitions.</li><li>Unit 1 project announced (browser build on itch.io).</li></ul><p class="note">Anchors promised again and postponed to L22.</p></div></div></details>
+<details class="lec" id="v23" data-video="23"><summary><span class="n">V23</span><span class="t">Lecture 21<small>2:13</small><span class="lecture-preview">Multiple canvases and Sort Order, Render Modes (Overlay / Camera / World Space) with a particle and post-processing preview, Free Aspect and the…</span></span><span class="d"><a href="https://youtu.be/iiYGs0FpbQg">Watch ↗</a></span></summary><div class="body">
+<div><p class="lab">Covered</p><ul class="cov"><li>Multiple canvases and Sort Order, Render Modes (Overlay / Camera / World Space) with a particle and post-processing preview, Free Aspect and the 1280×720 rule, itch.io vs Steam, Canvas Scaler, Graphic Raycaster.</li><li>TextMeshPro styling, Raw Image with a Render Texture minimap, Button component transitions.</li><li>Unit 1 project announced (browser build on itch.io).</li></ul><p class="note">Anchors promised again and postponed to L22.</p></div>
+<div><p class="lab">Agenda doc</p><p class="none">Not shown. Verbal: continue UI Canvas, anchors in detail, finish TextMeshPro.</p></div></div></details>
 
-<details class="lec"><summary><span class="n">V24</span><span class="t">Lecture 22<small>2:14 · last agenda view 02:08:16</small></span><span class="d"><a href="https://youtu.be/6UoZnyShUq4?t=7696">open</a></span></summary><div class="body">
+<details class="lec" id="v24" data-video="24"><summary><span class="n">V24</span><span class="t">Lecture 22<small>2:14 · last agenda view 02:08:16</small><span class="lecture-preview">Anchors and anchor presets (Alt / Shift), Panel, Vertical / Horizontal / Grid Layout Groups.</span></span><span class="d"><a href="https://youtu.be/6UoZnyShUq4?t=7696">Watch ↗</a></span></summary><div class="body">
+<div><p class="lab">Covered</p><ul class="cov"><li>Anchors and anchor presets (Alt / Shift), Panel, Vertical / Horizontal / Grid Layout Groups.</li><li>Fonts: TTF vs OTF, Font Asset Creator, Arabic with the Cairo font, Unicode ranges, ArabicSupport package (ArabicFixerTMPro).</li><li>Project rule: the game must have Arabic text.</li></ul></div>
 <div><p class="lab">Agenda doc (5 items)</p><ul class="agenda">
-<li>UI (continued)</li><li>UI Arabic support</li><li class="over">PlayerPrefs</li><li class="over">Sorting Layers</li><li class="over">2D Animation in Unity</li></ul></div>
-<div><p class="lab">Covered</p><ul class="cov"><li>Anchors and anchor presets (Alt / Shift), Panel, Vertical / Horizontal / Grid Layout Groups.</li><li>Fonts: TTF vs OTF, Font Asset Creator, Arabic with the Cairo font, Unicode ranges, ArabicSupport package (ArabicFixerTMPro).</li><li>Project rule: the game must have Arabic text.</li></ul></div></div></details>
+<li>UI (continued)</li><li>UI Arabic support</li><li class="over">PlayerPrefs</li><li class="over">Sorting Layers</li><li class="over">2D Animation in Unity</li></ul></div></div></details>
 
-<details class="lec"><summary><span class="n">V25</span><span class="t">Lecture 23<small>2:42 · last agenda view 02:03:21</small></span><span class="d"><a href="https://youtu.be/MYFYJ5gLc2g?t=7401">open</a></span></summary><div class="body">
+<details class="lec" id="v25" data-video="25"><summary><span class="n">V25</span><span class="t">Lecture 23<small>2:42 · last agenda view 02:03:21</small><span class="lecture-preview">TMP counter driven by arrow keys, car panel with a Horizontal Layout Group toggled from the numpad, Button OnClick and public methods, Game Over…</span></span><span class="d"><a href="https://youtu.be/MYFYJ5gLc2g?t=7401">Watch ↗</a></span></summary><div class="body">
+<div><p class="lab">Covered</p><ul class="cov"><li>TMP counter driven by arrow keys, car panel with a Horizontal Layout Group toggled from the numpad, Button OnClick and public methods, Game Over panel, Raycast Target blocking.</li><li>PlayerPrefs in the registry; Sorting Layers; prefabs, overrides, variants, nested prefabs and unpack.</li></ul></div>
 <div><p class="lab">Agenda doc (5 items, item 1 added at a student's reminder)</p><ul class="agenda">
-<li>Buttons and TextMeshPro in code</li><li>PlayerPrefs</li><li>Sorting Layers</li><li>Prefabs (one point left for L24)</li><li class="over">2D Animation in Unity</li></ul></div>
-<div><p class="lab">Covered</p><ul class="cov"><li>TMP counter driven by arrow keys, car panel with a Horizontal Layout Group toggled from the numpad, Button OnClick and public methods, Game Over panel, Raycast Target blocking.</li><li>PlayerPrefs in the registry; Sorting Layers; prefabs, overrides, variants, nested prefabs and unpack.</li></ul></div></div></details>
+<li>Buttons and TextMeshPro in code</li><li>PlayerPrefs</li><li>Sorting Layers</li><li>Prefabs (one point left for L24)</li><li class="over">2D Animation in Unity</li></ul></div></div></details>
 
-<details class="lec"><summary><span class="n">V26</span><span class="t">Lecture 24<small>2:39 · last agenda view 01:48:30</small></span><span class="d"><a href="https://youtu.be/ZoRDvTsJAsE?t=6510">open</a></span></summary><div class="body">
+<details class="lec" id="v26" data-video="26"><summary><span class="n">V26</span><span class="t">Lecture 24<small>2:39 · last agenda view 01:48:30</small><span class="lecture-preview">Prefab leftover: Instantiate, prefab reference rules. Cactus "Aziz" with a swinging stick: Lerp, normalization, Euler vs Quaternion, gimbal-lock…</span></span><span class="d"><a href="https://youtu.be/ZoRDvTsJAsE?t=6510">Watch ↗</a></span></summary><div class="body">
+<div><p class="lab">Covered</p><ul class="cov"><li>Prefab leftover: Instantiate, prefab reference rules. Cactus "Aziz" with a swinging stick: Lerp, normalization, Euler vs Quaternion, gimbal-lock warning.</li><li>Animation window, keyframes on rotation / colour / flip, Loop Time, curves, Animator Controller with a bool parameter and transitions.</li></ul></div>
 <div><p class="lab">Agenda doc (4 items)</p><ul class="agenda">
-<li>Simple 2D animation in Unity (both tweening and classical) (tweening done; classical in L25)</li><li class="over">Another simple animation for a UI</li><li class="over">Animation Events in Unity</li><li class="over">Foot-steps audio in C#</li></ul></div>
-<div><p class="lab">Covered</p><ul class="cov"><li>Prefab leftover: Instantiate, prefab reference rules. Cactus "Aziz" with a swinging stick: Lerp, normalization, Euler vs Quaternion, gimbal-lock warning.</li><li>Animation window, keyframes on rotation / colour / flip, Loop Time, curves, Animator Controller with a bool parameter and transitions.</li></ul></div></div></details>
+<li>Simple 2D animation in Unity (both tweening and classical) (tweening done; classical in L25)</li><li class="over">Another simple animation for a UI</li><li class="over">Animation Events in Unity</li><li class="over">Foot-steps audio in C#</li></ul></div></div></details>
 
-<details class="lec"><summary><span class="n">V27</span><span class="t">Lecture 25<small>2:43 · last agenda view 02:34:50</small></span><span class="d"><a href="https://youtu.be/HTqsIgma9SE?t=9290">open</a></span></summary><div class="body">
+<details class="lec" id="v27" data-video="27"><summary><span class="n">V27</span><span class="t">Lecture 25<small>2:43 · last agenda view 02:34:50</small><span class="lecture-preview">Sprite sheets and slicing, 9-slice borders, Point filter; "Abboud" idle and run clips, Animator bool from C#, flip, Animation Events, jump trigger…</span></span><span class="d"><a href="https://youtu.be/HTqsIgma9SE?t=9290">Watch ↗</a></span></summary><div class="body">
+<div><p class="lab">Covered</p><ul class="cov"><li>Sprite sheets and slicing, 9-slice borders, Point filter; "Abboud" idle and run clips, Animator bool from C#, flip, Animation Events, jump trigger with transitions.</li><li>Proposal for optional Sunday game- and level-design sessions.</li></ul></div>
 <div><p class="lab">Agenda doc (4 items after live edits)</p><ul class="agenda">
-<li>Shared homework (Mekorama)</li><li>Simple 2D animation in Unity (classical)</li><li>Animation Events in Unity</li><li class="over">Tilemaps</li></ul><p class="note">"Foot Steps Audio - C#" was removed from the doc during the lecture.</p></div>
-<div><p class="lab">Covered</p><ul class="cov"><li>Sprite sheets and slicing, 9-slice borders, Point filter; "Abboud" idle and run clips, Animator bool from C#, flip, Animation Events, jump trigger with transitions.</li><li>Proposal for optional Sunday game- and level-design sessions.</li></ul></div></div></details>
+<li>Shared homework (Mekorama)</li><li>Simple 2D animation in Unity (classical)</li><li>Animation Events in Unity</li><li class="over">Tilemaps</li></ul><p class="note">"Foot Steps Audio - C#" was removed from the doc during the lecture.</p></div></div></details>
 
-<details class="lec"><summary><span class="n">V28</span><span class="t">Lecture 26<small>2:54 · agenda shown 00:00–00:01 only</small></span><span class="d"><a href="https://youtu.be/PW_a7ga4A9w?t=60">open</a></span></summary><div class="body">
-<div><p class="lab">Agenda doc (1 item)</p><ul class="agenda"><li>Tilemaps (2D levels)</li></ul><p class="note">He also drew the tilemap pipeline on a whiteboard at 00:24–00:36.</p></div>
-<div><p class="lab">Covered</p><ul class="cov"><li>Abboud script clean-up in Rider, prefabs for Abboud and the floor; hand-painted levels vs tilemaps.</li><li>Sprite sheet slicing and PPU 32, Tile Palette, Tilemap Renderer sorting layers, Tilemap + Composite colliders, palette editing, Rule Tiles, Animated Tiles (waterfall, fire).</li></ul><p class="note">Fire-death code, 2D lights, parallax deferred.</p></div></div></details>
+<details class="lec" id="v28" data-video="28"><summary><span class="n">V28</span><span class="t">Lecture 26<small>2:54 · agenda shown 00:00–00:01 only</small><span class="lecture-preview">Abboud script clean-up in Rider, prefabs for Abboud and the floor; hand-painted levels vs tilemaps.</span></span><span class="d"><a href="https://youtu.be/PW_a7ga4A9w?t=60">Watch ↗</a></span></summary><div class="body">
+<div><p class="lab">Covered</p><ul class="cov"><li>Abboud script clean-up in Rider, prefabs for Abboud and the floor; hand-painted levels vs tilemaps.</li><li>Sprite sheet slicing and PPU 32, Tile Palette, Tilemap Renderer sorting layers, Tilemap + Composite colliders, palette editing, Rule Tiles, Animated Tiles (waterfall, fire).</li></ul><p class="note">Fire-death code, 2D lights, parallax deferred.</p></div>
+<div><p class="lab">Agenda doc (1 item)</p><ul class="agenda"><li>Tilemaps (2D levels)</li></ul><p class="note">He also drew the tilemap pipeline on a whiteboard at 00:24–00:36.</p></div></div></details>
 
-<details class="lec"><summary><span class="n">V29</span><span class="t">Lecture 27<small>2:43 · last agenda view 00:23:40</small></span><span class="d"><a href="https://youtu.be/IhvcOt6nfTU?t=1420">open</a></span></summary><div class="body">
+<details class="lec" id="v29" data-video="29"><summary><span class="n">V29</span><span class="t">Lecture 27<small>2:43 · last agenda view 00:23:40</small><span class="lecture-preview">Game feel with Canabalt, the juice video and the Game Feel book.</span></span><span class="d"><a href="https://youtu.be/IhvcOt6nfTU?t=1420">Watch ↗</a></span></summary><div class="body">
+<div><p class="lab">Covered</p><ul class="cov"><li>Game feel with Canabalt, the juice video and the Game Feel book.</li><li>Global Light 2D and target sorting layers, animated torch tiles, Spot Light 2D, keyframed fire flicker, four common lighting problems, Lit vs Unlit sprite materials.</li><li>Optional after-class talk on emotion through the senses.</li></ul></div>
 <div><p class="lab">Agenda doc (4 items, item 2 added live)</p><ul class="agenda">
-<li>Shared homework (Canabalt)</li><li>Intro to game feel / juice</li><li>2D Lights</li><li class="over">Cinemachine</li></ul></div>
-<div><p class="lab">Covered</p><ul class="cov"><li>Game feel with Canabalt, the juice video and the Game Feel book.</li><li>Global Light 2D and target sorting layers, animated torch tiles, Spot Light 2D, keyframed fire flicker, four common lighting problems, Lit vs Unlit sprite materials.</li><li>Optional after-class talk on emotion through the senses.</li></ul></div></div></details>
+<li>Shared homework (Canabalt)</li><li>Intro to game feel / juice</li><li>2D Lights</li><li class="over">Cinemachine</li></ul></div></div></details>
 
-<details class="lec"><summary><span class="n">V30</span><span class="t">Lecture 28<small>2:19 · last agenda view 02:09:36</small></span><span class="d"><a href="https://youtu.be/qkiShp9dGZg?t=7776">open</a></span></summary><div class="body">
+<details class="lec" id="v30" data-video="30"><summary><span class="n">V30</span><span class="t">Lecture 28<small>2:19 · last agenda view 02:09:36</small><span class="lecture-preview">Classroom resources tour, Mekorama level builder, full final-project brief.</span></span><span class="d"><a href="https://youtu.be/qkiShp9dGZg?t=7776">Watch ↗</a></span></summary><div class="body">
+<div><p class="lab">Covered</p><ul class="cov"><li>Classroom resources tour, Mekorama level builder, full final-project brief.</li><li>Freeform and Sprite lights, additive light mixing, shadows with Shadow Caster 2D, light blend styles, pixel-art import checklist, Pixel Perfect Camera, Cinemachine concepts via the cinematographer analogy.</li></ul></div>
 <div><p class="lab">Agenda doc (7 items after live edits)</p><ul class="agenda">
-<li>Notes about Mekorama</li><li class="red">Final project, Unit 1, 30-8-2026, 2D platformer (pixel art optional) (red = deadline emphasis)</li><li class="over">Building a small 2D platformer and uploading it to itch.io</li><li>2D Lights (continued)</li><li>Properties for pixel art (added live)</li><li>Pixel Perfect Camera (added live)</li><li class="over">Cinemachine (theory only, 10 minutes)</li></ul></div>
-<div><p class="lab">Covered</p><ul class="cov"><li>Classroom resources tour, Mekorama level builder, full final-project brief.</li><li>Freeform and Sprite lights, additive light mixing, shadows with Shadow Caster 2D, light blend styles, pixel-art import checklist, Pixel Perfect Camera, Cinemachine concepts via the cinematographer analogy.</li></ul></div></div></details>
+<li>Notes about Mekorama</li><li class="red">Final project, Unit 1, 30-8-2026, 2D platformer (pixel art optional) (red = deadline emphasis)</li><li class="over">Building a small 2D platformer and uploading it to itch.io</li><li>2D Lights (continued)</li><li>Properties for pixel art (added live)</li><li>Pixel Perfect Camera (added live)</li><li class="over">Cinemachine (theory only, 10 minutes)</li></ul></div></div></details>
 
-<details class="lec"><summary><span class="n">V31</span><span class="t">Guest lecture: Yazan Abbasi, PlinkPlay<small>2:24</small></span><span class="d"><a href="https://youtu.be/TKEgcGQCptg">open</a></span></summary><div class="body">
-<div><p class="lab">Agenda</p><p class="none">Guest's own slide deck: platform intro, the industry map, personal story, market numbers and monetization.</p></div>
-<div><p class="lab">Covered</p><ul class="cov"><li>Industry size, Flappy Bird and Vampire Survivors case studies, web / mobile / PC / console / VR paths, ads / IAP / offerwalls, publishers, metrics, PlinkPlay origin and demo, networking advice, Q&amp;A.</li></ul></div></div></details>
+<details class="lec" id="v31" data-video="31"><summary><span class="n">V31</span><span class="t">Guest lecture: Yazan Abbasi, PlinkPlay<small>2:24</small><span class="lecture-preview">Industry size, Flappy Bird and Vampire Survivors case studies, web / mobile / PC / console / VR paths, ads / IAP / offerwalls, publishers,…</span></span><span class="d"><a href="https://youtu.be/TKEgcGQCptg">Watch ↗</a></span></summary><div class="body">
+<div><p class="lab">Covered</p><ul class="cov"><li>Industry size, Flappy Bird and Vampire Survivors case studies, web / mobile / PC / console / VR paths, ads / IAP / offerwalls, publishers, metrics, PlinkPlay origin and demo, networking advice, Q&amp;A.</li></ul></div>
+<div><p class="lab">Agenda</p><p class="none">Guest's own slide deck: platform intro, the industry map, personal story, market numbers and monetization.</p></div></div></details>
 
-<details class="lec"><summary><span class="n">V32</span><span class="t">Lecture 29<small>2:18 · last agenda view 00:39:30</small></span><span class="d"><a href="https://youtu.be/xG6IhaOQ6pU?t=2370">open</a></span></summary><div class="body">
+<details class="lec" id="v32" data-video="32"><summary><span class="n">V32</span><span class="t">Lecture 29<small>2:18 · last agenda view 00:39:30</small><span class="lecture-preview">Passage and the instructor's own game-design story, itch.io, running Passage on Windows 11.</span></span><span class="d"><a href="https://youtu.be/xG6IhaOQ6pU?t=2370">Watch ↗</a></span></summary><div class="body">
+<div><p class="lab">Covered</p><ul class="cov"><li>Passage and the instructor's own game-design story, itch.io, running Passage on Windows 11.</li><li>Cinematography theory; Package Manager, Hub modules, Asset Store policy for the project; installing Cinemachine 3 and samples; camera types; 2D Camera with Position Composer (damping, target offset, dead zone, hard limits).</li></ul></div>
 <div><p class="lab">Agenda doc (9 items)</p><ul class="agenda">
-<li>Shared homework: play Passage</li><li>Shared homework: create an itch.io account</li><li class="red">Reminder: final project, 30-8-2026, 2D platformer (pixel art optional)</li><li class="over">Building a small 2D platformer and uploading to itch.io</li><li class="over">Properties for pixel art</li><li class="over">Pixel Perfect Camera</li><li>Cinemachine (highlighted; basics done)</li><li class="over">Matrix of collisions</li><li class="over">Climbing mechanic</li></ul></div>
-<div><p class="lab">Covered</p><ul class="cov"><li>Passage and the instructor's own game-design story, itch.io, running Passage on Windows 11.</li><li>Cinematography theory; Package Manager, Hub modules, Asset Store policy for the project; installing Cinemachine 3 and samples; camera types; 2D Camera with Position Composer (damping, target offset, dead zone, hard limits).</li></ul></div></div></details>
+<li>Shared homework: play Passage</li><li>Shared homework: create an itch.io account</li><li class="red">Reminder: final project, 30-8-2026, 2D platformer (pixel art optional)</li><li class="over">Building a small 2D platformer and uploading to itch.io</li><li class="over">Properties for pixel art</li><li class="over">Pixel Perfect Camera</li><li>Cinemachine (highlighted; basics done)</li><li class="over">Matrix of collisions</li><li class="over">Climbing mechanic</li></ul></div></div></details>
 
-<details class="lec"><summary><span class="n">V33</span><span class="t">Lecture 30<small>2:09 · last agenda view 02:09:41</small></span><span class="d"><a href="https://youtu.be/7DwZyzvL7Sg?t=7781">open</a></span></summary><div class="body">
+<details class="lec" id="v33" data-video="33"><summary><span class="n">V33</span><span class="t">Lecture 30<small>2:09 · last agenda view 02:09:41</small><span class="lecture-preview">Pixel Arabic font, Pixel Perfect Camera + Cinemachine Pixel Perfect fixing flicker, invisible walls, jump tuning with presets.</span></span><span class="d"><a href="https://youtu.be/7DwZyzvL7Sg?t=7781">Watch ↗</a></span></summary><div class="body">
+<div><p class="lab">Covered</p><ul class="cov"><li>Pixel Arabic font, Pixel Perfect Camera + Cinemachine Pixel Perfect fixing flicker, invisible walls, jump tuning with presets.</li><li>Cinemachine: Brain blends and custom blends, Trigger Action priority boost, State-Driven Camera bound to Animator states, composition and damping advice, Noise profile tried and removed, fire tilemap trigger ready for camera shake.</li></ul></div>
 <div><p class="lab">Agenda doc (12 items after live edits)</p><ul class="agenda">
-<li>Reminder: final project, 2D platformer with Tilemaps (pixel art optional)</li><li>Cinemachine (continued)</li><li class="over">Matrix of collisions</li><li class="over">Particle System</li><li class="over">How to hide the mouse cursor (added live)</li><li class="over">Managers persistence in scenes (un-greyed live)</li><li class="grey">Climbing mechanic</li><li class="grey">Firing bullet mechanic</li><li class="grey">Parallax effect</li><li class="grey">Audio</li><li class="grey">Optimize and build WebGL</li><li class="grey">Uploading to itch.io</li></ul></div>
-<div><p class="lab">Covered</p><ul class="cov"><li>Pixel Arabic font, Pixel Perfect Camera + Cinemachine Pixel Perfect fixing flicker, invisible walls, jump tuning with presets.</li><li>Cinemachine: Brain blends and custom blends, Trigger Action priority boost, State-Driven Camera bound to Animator states, composition and damping advice, Noise profile tried and removed, fire tilemap trigger ready for camera shake.</li></ul></div></div></details>
+<li>Reminder: final project, 2D platformer with Tilemaps (pixel art optional)</li><li>Cinemachine (continued)</li><li class="over">Matrix of collisions</li><li class="over">Particle System</li><li class="over">How to hide the mouse cursor (added live)</li><li class="over">Managers persistence in scenes (un-greyed live)</li><li class="grey">Climbing mechanic</li><li class="grey">Firing bullet mechanic</li><li class="grey">Parallax effect</li><li class="grey">Audio</li><li class="grey">Optimize and build WebGL</li><li class="grey">Uploading to itch.io</li></ul></div></div></details>
 
-<details class="lec"><summary><span class="n">V34</span><span class="t">Lecture 31<small>1:58 · last agenda view 01:40:47</small></span><span class="d"><a href="https://youtu.be/oqs8UfDYhc8?t=6047">open</a></span></summary><div class="body">
+<details class="lec" id="v34" data-video="34"><summary><span class="n">V34</span><span class="t">Lecture 31<small>1:58 · last agenda view 01:40:47</small><span class="lecture-preview">Short lecture (ended 8:00). Impulse Source / Listener camera shake, impulse from code on the fire trigger, Confiner 2D with composite and polygon…</span></span><span class="d"><a href="https://youtu.be/oqs8UfDYhc8?t=6047">Watch ↗</a></span></summary><div class="body">
+<div><p class="lab">Covered</p><ul class="cov"><li>Short lecture (ended 8:00). Impulse Source / Listener camera shake, impulse from code on the fire trigger, Confiner 2D with composite and polygon colliders, Layer Collision Matrix, Cursor.visible / lockState / SetCursor with a hand-drawn cursor.</li></ul></div>
 <div><p class="lab">Agenda doc (12 items)</p><ul class="agenda">
-<li>Reminder: final project, 2D platformer with Tilemaps</li><li>Cinemachine (continued): camera shake and Confiner</li><li>Matrix of collisions</li><li class="over">Particle System</li><li>How to hide the mouse cursor</li><li class="over">Managers persistence in scenes</li><li class="grey">Climbing mechanic</li><li class="grey">Firing bullet mechanic</li><li class="grey">Parallax effect</li><li class="grey">Audio</li><li class="grey">Optimize and build WebGL</li><li class="grey">Uploading to itch.io</li></ul></div>
-<div><p class="lab">Covered</p><ul class="cov"><li>Short lecture (ended 8:00). Impulse Source / Listener camera shake, impulse from code on the fire trigger, Confiner 2D with composite and polygon colliders, Layer Collision Matrix, Cursor.visible / lockState / SetCursor with a hand-drawn cursor.</li></ul></div></div></details>
+<li>Reminder: final project, 2D platformer with Tilemaps</li><li>Cinemachine (continued): camera shake and Confiner</li><li>Matrix of collisions</li><li class="over">Particle System</li><li>How to hide the mouse cursor</li><li class="over">Managers persistence in scenes</li><li class="grey">Climbing mechanic</li><li class="grey">Firing bullet mechanic</li><li class="grey">Parallax effect</li><li class="grey">Audio</li><li class="grey">Optimize and build WebGL</li><li class="grey">Uploading to itch.io</li></ul></div></div></details>
 
-<details class="lec"><summary><span class="n">V35</span><span class="t">Lecture 32<small>2:28 · last agenda view ≈00:46</small></span><span class="d"><a href="https://youtu.be/brlccAo6l_A?t=2760">open</a></span></summary><div class="body">
+<details class="lec" id="v35" data-video="35"><summary><span class="n">V35</span><span class="t">Lecture 32<small>2:28 · last agenda view ≈00:46</small><span class="lecture-preview">Homework: itch.io account, Monument Valley via Google Play Games on PC; Penrose triangle, isometric / orthographic theory, short Blender detour.</span></span><span class="d"><a href="https://youtu.be/brlccAo6l_A?t=2760">Watch ↗</a></span></summary><div class="body">
+<div><p class="lab">Covered</p><ul class="cov"><li>Homework: itch.io account, Monument Valley via Google Play Games on PC; Penrose triangle, isometric / orthographic theory, short Blender detour.</li><li>Particle System: CPU vs GPU, scene-view playback panel, main module properties, Simulation Space, Delta Time and Time.timeScale, Max Particles, Stop Action, value modes.</li></ul></div>
 <div><p class="lab">Agenda doc (12 items)</p><ul class="agenda">
-<li>Reminder: final project, 2D platformer with Tilemaps</li><li>Shared homework 1 + 2: itch.io account (and Monument Valley)</li><li>Classroom and YouTube playlists</li><li>Particle System (started: main module and value modes)</li><li class="over">Managers persistence in scenes</li><li class="over">Climbing mechanic</li><li class="over">Coins</li><li class="over">Firing bullet mechanic</li><li class="grey">Parallax effect</li><li class="grey">Audio</li><li class="grey">Optimize and build WebGL</li><li class="grey">Uploading to itch.io</li></ul></div>
-<div><p class="lab">Covered</p><ul class="cov"><li>Homework: itch.io account, Monument Valley via Google Play Games on PC; Penrose triangle, isometric / orthographic theory, short Blender detour.</li><li>Particle System: CPU vs GPU, scene-view playback panel, main module properties, Simulation Space, Delta Time and Time.timeScale, Max Particles, Stop Action, value modes.</li></ul></div></div></details>
+<li>Reminder: final project, 2D platformer with Tilemaps</li><li>Shared homework 1 + 2: itch.io account (and Monument Valley)</li><li>Classroom and YouTube playlists</li><li>Particle System (started: main module and value modes)</li><li class="over">Managers persistence in scenes</li><li class="over">Climbing mechanic</li><li class="over">Coins</li><li class="over">Firing bullet mechanic</li><li class="grey">Parallax effect</li><li class="grey">Audio</li><li class="grey">Optimize and build WebGL</li><li class="grey">Uploading to itch.io</li></ul></div></div></details>
 
-<details class="lec"><summary><span class="n">V36</span><span class="t">Lecture 33<small>2:25 · last agenda view 01:56:42</small></span><span class="d"><a href="https://youtu.be/jcmVSSk2-U4?t=7002">open</a></span></summary><div class="body">
+<details class="lec" id="v36" data-video="36"><summary><span class="n">V36</span><span class="t">Lecture 33<small>2:25 · last agenda view 01:56:42</small><span class="lecture-preview">Project rules (2D only, Tilemaps mandatory, Discord defense, attendance policy).</span></span><span class="d"><a href="https://youtu.be/jcmVSSk2-U4?t=7002">Watch ↗</a></span></summary><div class="body">
+<div><p class="lab">Covered</p><ul class="cov"><li>Project rules (2D only, Tilemaps mandatory, Discord defense, attendance policy).</li><li>Start Color modes and gradients, Renderer billboard vs mesh, particle materials (URP Particles Unlit), Asset Store fire sheet, Texture Sheet Animation, Flip-Book Blending / Soft Particles, Shape module.</li></ul></div>
 <div><p class="lab">Agenda doc (10 items)</p><ul class="agenda">
-<li class="red">Reminder: final project, <b>2D</b> platformer with <b>Tilemaps</b> ("2D" and "Tilemaps" turned red at the last showing)</li><li>Particle System (continued)</li><li class="over">Audio</li><li class="grey">Climbing game mechanic</li><li class="grey">Firing bullets game mechanic</li><li class="grey">Collecting coins game mechanic</li><li class="grey">Parallax effect</li><li class="grey">Managers persistence in scenes</li><li class="grey">Optimize and build WebGL</li><li class="grey">Uploading the game to itch.io</li></ul></div>
-<div><p class="lab">Covered</p><ul class="cov"><li>Project rules (2D only, Tilemaps mandatory, Discord defense, attendance policy).</li><li>Start Color modes and gradients, Renderer billboard vs mesh, particle materials (URP Particles Unlit), Asset Store fire sheet, Texture Sheet Animation, Flip-Book Blending / Soft Particles, Shape module.</li></ul></div></div></details>
+<li class="red">Reminder: final project, <b>2D</b> platformer with <b>Tilemaps</b> ("2D" and "Tilemaps" turned red at the last showing)</li><li>Particle System (continued)</li><li class="over">Audio</li><li class="grey">Climbing game mechanic</li><li class="grey">Firing bullets game mechanic</li><li class="grey">Collecting coins game mechanic</li><li class="grey">Parallax effect</li><li class="grey">Managers persistence in scenes</li><li class="grey">Optimize and build WebGL</li><li class="grey">Uploading the game to itch.io</li></ul></div></div></details>
 
-<details class="lec"><summary><span class="n">V37</span><span class="t">Lecture 34<small>2:15 · agenda shown 00:00–00:01 only</small></span><span class="d"><a href="https://youtu.be/av11lLbdTxk?t=54">open</a></span></summary><div class="body">
+<details class="lec" id="v37" data-video="37"><summary><span class="n">V37</span><span class="t">Lecture 34<small>2:15 · agenda shown 00:00–00:01 only</small><span class="lecture-preview">Renderer / Texture Sheet / Shape recap, Emission (rate over time, rate over distance, bursts), Over-Lifetime modules, By-Speed modules, Noise,…</span></span><span class="d"><a href="https://youtu.be/av11lLbdTxk?t=54">Watch ↗</a></span></summary><div class="body">
+<div><p class="lab">Covered</p><ul class="cov"><li>Renderer / Texture Sheet / Shape recap, Emission (rate over time, rate over distance, bursts), Over-Lifetime modules, By-Speed modules, Noise, Collision (planes and world).</li></ul><p class="note">Sub Emitters, External Forces, Lights, Trails to L35.</p></div>
 <div><p class="lab">Agenda doc (11 items)</p><ul class="agenda">
-<li class="red">Reminder: final project, 2D platformer with Tilemaps</li><li>Particle System (continued) (highlighted)</li><li class="over">Audio</li><li class="grey">Volumes (post-processing)</li><li class="grey">Climbing game mechanic</li><li class="grey">Firing bullets game mechanic</li><li class="grey">Collecting coins game mechanic</li><li class="grey">Parallax effect</li><li class="grey">Managers persistence in scenes</li><li class="grey">Optimize and build WebGL</li><li class="grey">Uploading the game to itch.io</li></ul></div>
-<div><p class="lab">Covered</p><ul class="cov"><li>Renderer / Texture Sheet / Shape recap, Emission (rate over time, rate over distance, bursts), Over-Lifetime modules, By-Speed modules, Noise, Collision (planes and world).</li></ul><p class="note">Sub Emitters, External Forces, Lights, Trails to L35.</p></div></div></details>
+<li class="red">Reminder: final project, 2D platformer with Tilemaps</li><li>Particle System (continued) (highlighted)</li><li class="over">Audio</li><li class="grey">Volumes (post-processing)</li><li class="grey">Climbing game mechanic</li><li class="grey">Firing bullets game mechanic</li><li class="grey">Collecting coins game mechanic</li><li class="grey">Parallax effect</li><li class="grey">Managers persistence in scenes</li><li class="grey">Optimize and build WebGL</li><li class="grey">Uploading the game to itch.io</li></ul></div></div></details>
 
-<details class="lec"><summary><span class="n">V38</span><span class="t">Lecture 35<small>2:25 · last agenda view ≈01:02</small></span><span class="d"><a href="https://youtu.be/yPXEP1sI0ZQ?t=14">open</a></span></summary><div class="body">
+<details class="lec" id="v38" data-video="38"><summary><span class="n">V38</span><span class="t">Lecture 35<small>2:25 · last agenda view ≈01:02</small><span class="lecture-preview">External Forces and Force Field (vortex, black hole), vector fields, Trails, 2D collision, Sub Emitters on collision (after a Unity crash), Lights…</span></span><span class="d"><a href="https://youtu.be/yPXEP1sI0ZQ?t=14">Watch ↗</a></span></summary><div class="body">
+<div><p class="lab">Covered</p><ul class="cov"><li>External Forces and Force Field (vortex, black hole), vector fields, Trails, 2D collision, Sub Emitters on collision (after a Unity crash), Lights module in a 3D project, Bloom as a glow alternative. Particle System declared finished.</li></ul></div>
 <div><p class="lab">Agenda doc (11 items)</p><ul class="agenda">
-<li class="red">Reminder: final project, 2D platformer with Tilemaps</li><li>Particle System (continued)</li><li class="over">Audio</li><li class="over">Global Volumes (post-processing) (un-greyed; only a Bloom teaser shown)</li><li class="grey">Climbing game mechanic</li><li class="grey">Firing bullets game mechanic</li><li class="grey">Collecting coins game mechanic</li><li class="grey">Parallax effect</li><li class="grey">Managers persistence in scenes</li><li class="grey">Optimize and build WebGL</li><li class="grey">Uploading the game to itch.io</li></ul></div>
-<div><p class="lab">Covered</p><ul class="cov"><li>External Forces and Force Field (vortex, black hole), vector fields, Trails, 2D collision, Sub Emitters on collision (after a Unity crash), Lights module in a 3D project, Bloom as a glow alternative. Particle System declared finished.</li></ul></div></div></details>
+<li class="red">Reminder: final project, 2D platformer with Tilemaps</li><li>Particle System (continued)</li><li class="over">Audio</li><li class="over">Global Volumes (post-processing) (un-greyed; only a Bloom teaser shown)</li><li class="grey">Climbing game mechanic</li><li class="grey">Firing bullets game mechanic</li><li class="grey">Collecting coins game mechanic</li><li class="grey">Parallax effect</li><li class="grey">Managers persistence in scenes</li><li class="grey">Optimize and build WebGL</li><li class="grey">Uploading the game to itch.io</li></ul></div></div></details>
 
-<details class="lec"><summary><span class="n">V39</span><span class="t">Lecture 36<small>2:09 · last agenda view ≈01:49</small></span><span class="d"><a href="https://youtu.be/l3qYLRKpG9c?t=20">open</a></span></summary><div class="body">
+<details class="lec" id="v39" data-video="39"><summary><span class="n">V39</span><span class="t">Lecture 36<small>2:09 · last agenda view ≈01:49</small><span class="lecture-preview">Enemy star with a particle burst on trigger, Cinemachine impulse from code, scene reload; saw-blade rotation clip.</span></span><span class="d"><a href="https://youtu.be/l3qYLRKpG9c?t=20">Watch ↗</a></span></summary><div class="body">
+<div><p class="lab">Covered</p><ul class="cov"><li>Enemy star with a particle burst on trigger, Cinemachine impulse from code, scene reload; saw-blade rotation clip.</li><li>Sound physics and hearing, sampling and bit depth, Audio Listener vs Source, Asset Store ambient pack, Force To Mono.</li></ul></div>
 <div><p class="lab">Agenda doc (12 items)</p><ul class="agenda">
-<li class="red">Reminder: final project, 2D platformer with Tilemaps</li><li>A simple example of using the Particle System from C#</li><li>Audio + C# (theory and first import; continued in L37)</li><li class="grey">Trail</li><li class="grey">Global Volumes (post-processing)</li><li class="grey">Climbing game mechanic</li><li class="grey">Firing bullets game mechanic</li><li class="grey">Collecting coins game mechanic</li><li class="grey">Parallax effect</li><li class="grey">Managers persistence in scenes</li><li class="grey">Optimize and build WebGL</li><li class="grey">Uploading the game to itch.io</li></ul></div>
-<div><p class="lab">Covered</p><ul class="cov"><li>Enemy star with a particle burst on trigger, Cinemachine impulse from code, scene reload; saw-blade rotation clip.</li><li>Sound physics and hearing, sampling and bit depth, Audio Listener vs Source, Asset Store ambient pack, Force To Mono.</li></ul></div></div></details>
+<li class="red">Reminder: final project, 2D platformer with Tilemaps</li><li>A simple example of using the Particle System from C#</li><li>Audio + C# (theory and first import; continued in L37)</li><li class="grey">Trail</li><li class="grey">Global Volumes (post-processing)</li><li class="grey">Climbing game mechanic</li><li class="grey">Firing bullets game mechanic</li><li class="grey">Collecting coins game mechanic</li><li class="grey">Parallax effect</li><li class="grey">Managers persistence in scenes</li><li class="grey">Optimize and build WebGL</li><li class="grey">Uploading the game to itch.io</li></ul></div></div></details>
 
-<details class="lec"><summary><span class="n">V40</span><span class="t">Rasheed Abu Eideh session<small>3:40</small></span><span class="d"><a href="https://youtu.be/zlO8OCH28Sc">open</a></span></summary><div class="body">
-<div><p class="lab">Agenda</p><p class="none">Guest session, no course agenda.</p></div>
-<div><p class="lab">Covered</p><ul class="cov"><li>From Athkari and X-Bugs to "Liyla and the Shadows of War" and "Dreams on a Pillow": prototyping, scope, game design as a discipline, the App Store ban, publishers, vertical slices, live gameplay, 90-minute Q&amp;A.</li></ul></div></div></details>
+<details class="lec" id="v40" data-video="40"><summary><span class="n">V40</span><span class="t">Rasheed Abu Eideh session<small>3:40</small><span class="lecture-preview">From Athkari and X-Bugs to "Liyla and the Shadows of War" and "Dreams on a Pillow": prototyping, scope, game design as a discipline, the App Store…</span></span><span class="d"><a href="https://youtu.be/zlO8OCH28Sc">Watch ↗</a></span></summary><div class="body">
+<div><p class="lab">Covered</p><ul class="cov"><li>From Athkari and X-Bugs to "Liyla and the Shadows of War" and "Dreams on a Pillow": prototyping, scope, game design as a discipline, the App Store ban, publishers, vertical slices, live gameplay, 90-minute Q&amp;A.</li></ul></div>
+<div><p class="lab">Agenda</p><p class="none">Guest session, no course agenda.</p></div></div></details>
 
-<details class="lec"><summary><span class="n">V41</span><span class="t">Lecture 37<small>2:21 · last agenda view 00:05:32</small></span><span class="d"><a href="https://youtu.be/E-enujRrTvg?t=332">open</a></span></summary><div class="body">
+<details class="lec" id="v41" data-video="41"><summary><span class="n">V41</span><span class="t">Lecture 37<small>2:21 · last agenda view 00:05:32</small><span class="lecture-preview">freesound.org, WAV vs MP3, import settings (Force To Mono, Load In Background, Load Type, Preload, Compression Format, Sample Rate, Normalize).</span></span><span class="d"><a href="https://youtu.be/E-enujRrTvg?t=332">Watch ↗</a></span></summary><div class="body">
+<div><p class="lab">Covered</p><ul class="cov"><li>freesound.org, WAV vs MP3, import settings (Force To Mono, Load In Background, Load Type, Preload, Compression Format, Sample Rate, Normalize).</li><li>Audio Listener, Audio Source, Audio Mixer with a distortion demo, Reverb Zones (long troubleshoot), Priority, Pitch and the machine-gun effect, Stereo Pan, Spatial Blend 2D/3D with a moved listener.</li></ul><p class="note">Slider UI, mixer in depth, 3D sound settings and pitch randomisation left for the next lecture.</p></div>
 <div><p class="lab">Agenda doc (14 items, item 2 edited live)</p><ul class="agenda">
-<li class="red">Reminder: final project, 2D platformer with Tilemaps</li><li>Importing + Audio + Audio Mixer + C# (mixer only briefly)</li><li class="over">Slider UI</li><li class="grey">Sprite Mask + UI Masks</li><li class="grey">Trail</li><li class="grey">Global Volumes (post-processing)</li><li class="grey">Climbing game mechanic</li><li class="grey">New Input System</li><li class="grey">Firing bullets game mechanic</li><li class="grey">Collecting coins game mechanic</li><li class="grey">Parallax effect and Managers persistence (hidden behind a toolbar in the recording)</li><li class="grey">Optimize and build WebGL</li><li class="grey">Uploading the game to itch.io</li></ul></div>
-<div><p class="lab">Covered</p><ul class="cov"><li>freesound.org, WAV vs MP3, import settings (Force To Mono, Load In Background, Load Type, Preload, Compression Format, Sample Rate, Normalize).</li><li>Audio Listener, Audio Source, Audio Mixer with a distortion demo, Reverb Zones (long troubleshoot), Priority, Pitch and the machine-gun effect, Stereo Pan, Spatial Blend 2D/3D with a moved listener.</li></ul><p class="note">Slider UI, mixer in depth, 3D sound settings and pitch randomisation left for the next lecture.</p></div></div></details>
+<li class="red">Reminder: final project, 2D platformer with Tilemaps</li><li>Importing + Audio + Audio Mixer + C# (mixer only briefly)</li><li class="over">Slider UI</li><li class="grey">Sprite Mask + UI Masks</li><li class="grey">Trail</li><li class="grey">Global Volumes (post-processing)</li><li class="grey">Climbing game mechanic</li><li class="grey">New Input System</li><li class="grey">Firing bullets game mechanic</li><li class="grey">Collecting coins game mechanic</li><li class="grey">Parallax effect and Managers persistence (hidden behind a toolbar in the recording)</li><li class="grey">Optimize and build WebGL</li><li class="grey">Uploading the game to itch.io</li></ul></div></div></details>
 
-<details class="lec"><summary><span class="n">V42</span><span class="t">Lecture 38<small>2:19 · last agenda view 00:44:50</small></span><span class="d"><a href="https://youtu.be/uOROfvsEF7o?t=2690">open</a></span></summary><div class="body">
+<details class="lec" id="v42" data-video="42"><summary><span class="n">V42</span><span class="t">Lecture 38<small>2:19 · last agenda view 00:44:50</small><span class="lecture-preview">Reverb Zone review with a dry clip, Audio Listener placement, echo vs reverb demonstrated in Audacity; Spatial Blend 2D vs 3D, binaural demo;…</span></span><span class="d"><a href="https://youtu.be/uOROfvsEF7o?t=2690">Watch ↗</a></span></summary><div class="body">
+<div><p class="lab">Covered</p><ul class="cov"><li>Reverb Zone review with a dry clip, Audio Listener placement, echo vs reverb demonstrated in Audacity; Spatial Blend 2D vs 3D, binaural demo; Doppler Level with an ambulance clip; Spread; Volume Rolloff (linear vs logarithmic, min/max distance, custom curve). Audio Source declared finished.</li><li>Audio Mixer: signal path, Master and child groups, Music and SFX sources routed to groups, edit in play mode, decibels with a Mathf.Log10 test script (−80 dB floor), Solo / Mute / Bypass, Lowpass effect, Duck Volume via Send.</li><li>Ableton Live and Reaper mixers shown; Reaper will be taught later.</li></ul><p class="note">Admin: lecture recaps will be posted to Classroom from now on. Carried over: Mixer Snapshots and Views, Slider UI, New Input System, climbing mechanic, sound from C#.</p></div>
 <div><p class="lab">Agenda doc (18 items; he says it is now the agenda for the rest of Unit 1)</p><ul class="agenda">
-<li class="red">Reminder: final project, 2D platformer with Tilemaps</li><li>Audio Source + Audio Mixer + C# (Audio Source finished; Mixer started, Snapshots and Views left)</li><li class="over">Slider UI</li><li class="over">New Input System + mouse input in 2D</li><li class="over">Climbing game mechanic, very simple (edited live)</li><li class="grey">Sprite Mask + UI Masks</li><li class="grey">Physics Engine (added live)</li><li class="grey">Trail</li><li class="grey">Global Volumes (post-processing)</li><li class="grey">Animation (blend trees)</li><li class="grey">Cinemachine (several cameras)</li><li class="grey">Firing bullets game mechanic</li><li class="grey">Collecting coins game mechanic</li><li class="grey">Parallax effect</li><li class="grey">Managers persistence in scenes</li><li class="grey">Optimization of project</li><li class="grey">Build WebGL build</li><li class="grey">Uploading the game to itch.io</li></ul></div>
-<div><p class="lab">Covered</p><ul class="cov"><li>Reverb Zone review with a dry clip, Audio Listener placement, echo vs reverb demonstrated in Audacity; Spatial Blend 2D vs 3D, binaural demo; Doppler Level with an ambulance clip; Spread; Volume Rolloff (linear vs logarithmic, min/max distance, custom curve). Audio Source declared finished.</li><li>Audio Mixer: signal path, Master and child groups, Music and SFX sources routed to groups, edit in play mode, decibels with a Mathf.Log10 test script (−80 dB floor), Solo / Mute / Bypass, Lowpass effect, Duck Volume via Send.</li><li>Ableton Live and Reaper mixers shown; Reaper will be taught later.</li></ul><p class="note">Admin: lecture recaps will be posted to Classroom from now on. Carried over: Mixer Snapshots and Views, Slider UI, New Input System, climbing mechanic, sound from C#.</p></div></div></details>
+<li class="red">Reminder: final project, 2D platformer with Tilemaps</li><li>Audio Source + Audio Mixer + C# (Audio Source finished; Mixer started, Snapshots and Views left)</li><li class="over">Slider UI</li><li class="over">New Input System + mouse input in 2D</li><li class="over">Climbing game mechanic, very simple (edited live)</li><li class="grey">Sprite Mask + UI Masks</li><li class="grey">Physics Engine (added live)</li><li class="grey">Trail</li><li class="grey">Global Volumes (post-processing)</li><li class="grey">Animation (blend trees)</li><li class="grey">Cinemachine (several cameras)</li><li class="grey">Firing bullets game mechanic</li><li class="grey">Collecting coins game mechanic</li><li class="grey">Parallax effect</li><li class="grey">Managers persistence in scenes</li><li class="grey">Optimization of project</li><li class="grey">Build WebGL build</li><li class="grey">Uploading the game to itch.io</li></ul></div></div></details>
 
-<details class="lec"><summary><span class="n">V43</span><span class="t">Lecture 39<small>2:35 · last agenda view 01:21:26</small></span><span class="d"><a href="https://youtu.be/zY6zblM-Auc?t=20">open</a></span></summary><div class="body">
+<details class="lec" id="v43" data-video="43"><summary><span class="n">V43</span><span class="t">Lecture 39<small>2:35 · last agenda view 01:21:26</small><span class="lecture-preview">Sound Settings panel built with Layout Groups (Grid with Fixed Column Count), then the Slider component in depth: Background / Fill / Handle,…</span></span><span class="d"><a href="https://youtu.be/zY6zblM-Auc?t=20">Watch ↗</a></span></summary><div class="body">
+<div><p class="lab">Covered</p><ul class="cov"><li>Sound Settings panel built with Layout Groups (Grid with Fixed Column Count), then the Slider component in depth: Background / Fill / Handle, Interactable as a progress or health bar, custom sprites drawn in Paint (Tiled image type), Whole Numbers, Min / Max, Direction, On Value Changed into a float method with ToString("F2").</li><li>New mixer with Music and SFX groups and two Audio Sources (footsteps clip import settings); exposed Volume parameters, AudioMixer.SetFloat with the Mathf.Log10 × 20 conversion and a 0.0001 floor; WebGL supports only part of the mixer API.</li><li>PlayerPrefs persistence with a first-run flag and 0.5 defaults (students caught the missing save), then a Master mute Toggle at −80 dB stored as an int. Script posted as file and text.</li></ul><p class="note">Homework: rebuild the settings UI + mixer + persistence and submit a short video of it working. Break 01:14–01:17. Audio declared finished here; Snapshots and Views return in L40, and animation/trigger sounds in L41.</p></div>
 <div><p class="lab">Agenda doc (20 items, every line reworded; items 10 and 18 edited live)</p><ul class="agenda">
 <li class="red">Reminder: final project, Unit 1, 2D platformer with Tilemaps (pixel art preferable)</li><li>Audio mixing and volume control with the Audio Mixer</li><li>UI Sliders: displaying and adjusting values</li><li class="over">2D Physics: working with Effectors</li><li class="over">2D Physics: working with Joints</li><li class="over">Cinemachine: managing and switching between multiple cameras</li><li class="grey">Unity Input System and mouse input in 2D</li><li class="grey">Creating a coin collection mechanic</li><li class="grey">Creating a simple climbing mechanic</li><li class="grey">Creating a shooting mechanic: firing bullets (Object Pooling, added live)</li><li class="grey">Adding motion trails with the Trail Renderer</li><li class="grey">Animation with Blend Trees</li><li class="grey">2D character rigging, skeletal animation and inverse kinematics (IK)</li><li class="grey">Creating a parallax scrolling effect</li><li class="grey">Working with Sprite Masks and UI Masks</li><li class="grey">Post-processing effects with Global Volumes</li><li class="grey">Keeping game managers persistent across scenes</li><li class="grey">Optimizing a Unity 2D project (Sprites, added live)</li><li class="grey">Creating a WebGL build</li><li class="grey">Uploading your game to itch.io</li></ul>
-<p class="note">Black items 2–6 are the near-term block; he said nothing more will be added to Unit 1. Rigging/IK, Effectors and Joints are new to the list.</p></div>
-<div><p class="lab">Covered</p><ul class="cov"><li>Sound Settings panel built with Layout Groups (Grid with Fixed Column Count), then the Slider component in depth: Background / Fill / Handle, Interactable as a progress or health bar, custom sprites drawn in Paint (Tiled image type), Whole Numbers, Min / Max, Direction, On Value Changed into a float method with ToString("F2").</li><li>New mixer with Music and SFX groups and two Audio Sources (footsteps clip import settings); exposed Volume parameters, AudioMixer.SetFloat with the Mathf.Log10 × 20 conversion and a 0.0001 floor; WebGL supports only part of the mixer API.</li><li>PlayerPrefs persistence with a first-run flag and 0.5 defaults (students caught the missing save), then a Master mute Toggle at −80 dB stored as an int. Script posted as file and text.</li></ul><p class="note">Homework: rebuild the settings UI + mixer + persistence and submit a short video of it working. Break 01:14–01:17. Audio declared finished here; Snapshots and Views return in L40, and animation/trigger sounds in L41.</p></div></div></details>
+<p class="note">Black items 2–6 are the near-term block; he said nothing more will be added to Unit 1. Rigging/IK, Effectors and Joints are new to the list.</p></div></div></details>
 
-<details class="lec" id="v44"><summary><span class="n">V44</span><span class="t">Lecture 40<small>2:36 · last verified agenda view 00:18:36</small></span><span class="d"><a href="https://youtu.be/sKJUf5znH34?t=1110">open</a></span></summary><div class="body">
-<div><p class="lab">Agenda doc (items 1–20 visible in the final view)</p><ul class="agenda">
-<li class="red">Reminder: final project, Unit 1, 2D platformer with Tilemaps (pixel art preferable)</li><li>Shared homework: Candy Crush / game juice</li><li>Audio mixing and volume control with the Audio Mixer</li><li class="over">UI Sliders: displaying values (carried from L39; not retaught)</li><li class="over">2D Physics: working with Effectors</li><li class="over">2D Physics: working with Joints</li><li class="over">Cinemachine: managing and switching between multiple cameras</li><li class="over">Parent &amp; children using Transform class</li><li class="over">Adjusting colliders in realtime</li><li class="grey">Unity Input System and mouse input in 2D</li><li class="grey">Creating a coin collection mechanic</li><li class="grey">Creating a simple climbing mechanic</li><li class="grey">Creating a shooting mechanic: firing bullets (Object Pooling)</li><li class="grey">Adding motion trails with the Trail Renderer</li><li class="grey">Animation with Blend Trees</li><li class="grey">2D character rigging, skeletal animation and inverse kinematics (IK)</li><li class="grey">Creating a parallax scrolling effect</li><li class="grey">Working with Sprite Masks and UI Masks</li><li class="grey">Post-processing effects with Global Volumes</li><li class="grey">Keeping game managers persistent across scenes</li></ul>
-<p class="note">The lower part of the document is off-screen; no unseen items are inferred here. The two Transform/collider items are new to the visible roadmap. Late automatic matches were browser/search pages, not the agenda.</p></div>
+<details class="lec" id="v44" data-video="44"><summary><span class="n">V44</span><span class="t">Lecture 40<small>2:36 · last verified agenda view 00:18:36</small><span class="lecture-preview">Candy Crush: visual, audio, motion and haptic feedback; combo pitch, squash, bounce, particles and anticipation, explained through slowed gameplay.</span></span><span class="d"><a href="https://youtu.be/sKJUf5znH34?t=1110">Watch ↗</a></span></summary><div class="body">
 <div><p class="lab">Covered</p><ul class="cov">
 <li>Candy Crush: visual, audio, motion and haptic feedback; combo pitch, squash, bounce, particles and anticipation, explained through slowed gameplay.</li>
 <li>Audio Mixer routing: a drums mixer feeding a music group; ordered effects, shared reverb with Send/Receive, a send before attenuation for wet-only output, and Duck Volume sidechain controls.</li>
 <li>Views change channel visibility; Snapshots change mixer settings. UI mute button with two AudioMixerSnapshot references and TransitionTo, including a timed fade.</li>
 <li>Seven-note piano: Horizontal Layout Group, one Audio Source, serialized Audio Clips, PlayOneShot, integer button callbacks and A/S/D/F/G/H/J keyboard input.</li>
-</ul><p class="note">Keyboard notes work; the attempted UI pressed-colour feedback remains unresolved. No persistent audio manager is implemented. Advanced mixer material is explicitly not required for the WebGL project; L39 settings homework remains required.</p></div></div></details>
+</ul><p class="note">Keyboard notes work; the attempted UI pressed-colour feedback remains unresolved. No persistent audio manager is implemented. Advanced mixer material is explicitly not required for the WebGL project; L39 settings homework remains required.</p></div>
+<div><p class="lab">Agenda doc (items 1–20 visible in the final view)</p><ul class="agenda">
+<li class="red">Reminder: final project, Unit 1, 2D platformer with Tilemaps (pixel art preferable)</li><li>Shared homework: Candy Crush / game juice</li><li>Audio mixing and volume control with the Audio Mixer</li><li class="over">UI Sliders: displaying values (carried from L39; not retaught)</li><li class="over">2D Physics: working with Effectors</li><li class="over">2D Physics: working with Joints</li><li class="over">Cinemachine: managing and switching between multiple cameras</li><li class="over">Parent &amp; children using Transform class</li><li class="over">Adjusting colliders in realtime</li><li class="grey">Unity Input System and mouse input in 2D</li><li class="grey">Creating a coin collection mechanic</li><li class="grey">Creating a simple climbing mechanic</li><li class="grey">Creating a shooting mechanic: firing bullets (Object Pooling)</li><li class="grey">Adding motion trails with the Trail Renderer</li><li class="grey">Animation with Blend Trees</li><li class="grey">2D character rigging, skeletal animation and inverse kinematics (IK)</li><li class="grey">Creating a parallax scrolling effect</li><li class="grey">Working with Sprite Masks and UI Masks</li><li class="grey">Post-processing effects with Global Volumes</li><li class="grey">Keeping game managers persistent across scenes</li></ul>
+<p class="note">The lower part of the document is off-screen; no unseen items are inferred here. The two Transform/collider items are new to the visible roadmap. Late automatic matches were browser/search pages, not the agenda.</p></div></div></details>
 
-<details class="lec" id="v45"><summary><span class="n">V45</span><span class="t">Lecture 41<small>2:19 · last verified agenda view 02:16:28</small></span><span class="d"><a href="https://youtu.be/smDlhiMGsHI?t=8186">open</a></span></summary><div class="body">
-<div><p class="lab">Agenda doc (21 items; Joints moved before Effectors)</p><ul class="agenda">
-<li class="red">Reminder: final project, Unit 1, 2D platformer with Tilemaps (pixel art preferable)</li><li>Sound with animation clips + collider</li><li>2D Physics: working with Joints (Fixed and Distance taught; others remain)</li><li class="over">2D Physics: working with Effectors</li><li class="over">Cinemachine: managing and switching between multiple cameras</li><li class="over">Parent &amp; children using Transform class</li><li class="over">Adjusting colliders in realtime</li><li class="grey">Unity Input System and mouse input in 2D</li><li class="grey">Creating a coin collection mechanic</li><li class="grey">Creating a simple climbing mechanic</li><li class="grey">Creating a shooting mechanic: firing bullets (Object Pooling)</li><li class="grey">Adding motion trails with the Trail Renderer</li><li class="grey">Animation with Blend Trees</li><li class="grey">2D character rigging, skeletal animation and inverse kinematics (IK)</li><li class="grey">Creating a parallax scrolling effect</li><li class="grey">Working with Sprite Masks and UI Masks</li><li class="grey">Post-processing effects with Global Volumes</li><li class="grey">Keeping game managers persistent across scenes</li><li class="grey">Optimizing a Unity 2D project (Sprites)</li><li class="grey">Creating a WebGL build</li><li class="grey">Uploading your game to itch.io</li></ul>
-<p class="note">Item 2 is edited to add “+ Collider” near the start. At about 01:20, Joints and Effectors swap order. Items 8–21 remain grey; “2D” and “Tilemaps” in the project reminder are red.</p></div>
+<details class="lec" id="v45" data-video="45"><summary><span class="n">V45</span><span class="t">Lecture 41<small>2:19 · last verified agenda view 02:16:28</small><span class="lecture-preview">Audacity footstep editing: separate and trim two clips, then Animation Events on the running clip call PlayOneShot at foot contacts.</span></span><span class="d"><a href="https://youtu.be/smDlhiMGsHI?t=8186">Watch ↗</a></span></summary><div class="body">
 <div><p class="lab">Covered</p><ul class="cov">
 <li>Audacity footstep editing: separate and trim two clips, then Animation Events on the running clip call PlayOneShot at foot contacts.</li>
 <li>Rotating hazard with Rigidbody2D.angularVelocity in FixedUpdate; record and process a hurt sound, route it through a mixer, and play it on OnTriggerEnter2D after checking the player's tag.</li>
 <li>Fixed Joint 2D: connected body versus world attachment, anchors and Auto Configure, Frequency, Damping Ratio, Break Force/Torque, Break Action and Enable Collision. Tune a platform under the player's weight.</li>
 <li>Distance Joint 2D: swinging attachment, distance and anchors, connection to a Static/Kinematic body, break force and collision. Maximum Distance Only is discussed; its live demonstration is inconclusive.</li>
-</ul><p class="note">Other joints and all effectors remain pending. Separate homework is promised after each topic finishes. At 02:16, the instructor accepts that homework instead of forcing an advanced topic into a final project where it does not fit.</p></div></div></details>
+</ul><p class="note">Other joints and all effectors remain pending. Separate homework is promised after each topic finishes. At 02:16, the instructor accepts that homework instead of forcing an advanced topic into a final project where it does not fit.</p></div>
+<div><p class="lab">Agenda doc (21 items; Joints moved before Effectors)</p><ul class="agenda">
+<li class="red">Reminder: final project, Unit 1, 2D platformer with Tilemaps (pixel art preferable)</li><li>Sound with animation clips + collider</li><li>2D Physics: working with Joints (Fixed and Distance taught; others remain)</li><li class="over">2D Physics: working with Effectors</li><li class="over">Cinemachine: managing and switching between multiple cameras</li><li class="over">Parent &amp; children using Transform class</li><li class="over">Adjusting colliders in realtime</li><li class="grey">Unity Input System and mouse input in 2D</li><li class="grey">Creating a coin collection mechanic</li><li class="grey">Creating a simple climbing mechanic</li><li class="grey">Creating a shooting mechanic: firing bullets (Object Pooling)</li><li class="grey">Adding motion trails with the Trail Renderer</li><li class="grey">Animation with Blend Trees</li><li class="grey">2D character rigging, skeletal animation and inverse kinematics (IK)</li><li class="grey">Creating a parallax scrolling effect</li><li class="grey">Working with Sprite Masks and UI Masks</li><li class="grey">Post-processing effects with Global Volumes</li><li class="grey">Keeping game managers persistent across scenes</li><li class="grey">Optimizing a Unity 2D project (Sprites)</li><li class="grey">Creating a WebGL build</li><li class="grey">Uploading your game to itch.io</li></ul>
+<p class="note">Item 2 is edited to add “+ Collider” near the start. At about 01:20, Joints and Effectors swap order. Items 8–21 remain grey; “2D” and “Tilemaps” in the project reminder are red.</p></div></div></details>
 
-<h2 id="method">How this was built</h2>
-<div class="method">
+</div>
+    <div class="empty-state" id="lectures-empty" hidden><h3>No lectures found</h3><p>Try another keyword or show all videos.</p><button type="button" class="soft-button" data-reset>Reset search &amp; filters</button></div>
+  </section>
+  <section class="view" id="pending" aria-labelledby="pending-heading"><h2 id="pending-heading">What’s next</h2><p>Unit 1 is still in progress. These topics remain on the instructor’s roadmap as of Lecture 41.</p>
+    <div class="roadmap-grid">
+      <article class="roadmap-card"><span class="unit">01 / Physics &amp; controls</span><h3>Build on the foundations</h3><ul><li>Remaining Joint 2D types and Effectors</li><li>Transform parent/child operations</li><li>Runtime collider adjustments</li><li>New Input System and mouse input</li><li>Further Cinemachine multi-camera work</li></ul></article>
+      <article class="roadmap-card"><span class="unit">02 / Gameplay</span><h3>Add more ways to play</h3><ul><li>Coin collection and climbing</li><li>Shooting with object pooling</li><li>Persistent game managers across scenes</li></ul></article>
+      <article class="roadmap-card"><span class="unit">03 / Visuals &amp; animation</span><h3>Bring the world to life</h3><ul><li>Trail Renderer and blend trees</li><li>2D rigging and inverse kinematics</li><li>Parallax, Sprite Masks and UI Masks</li><li>Post-processing with Global Volumes</li></ul></article>
+      <article class="roadmap-card"><span class="unit">04 / Release</span><h3>Get the game ready to share</h3><ul><li>Sprite and project optimisation</li><li>WebGL build</li><li>Upload to itch.io</li></ul></article>
+    </div>
+    <details class="reading-guide"><summary>Coverage context &amp; homework guidance</summary><p>As of <a href="#v45">L41</a>, Fixed Joint 2D and Distance Joint 2D have been taught; the other joints and Effectors remain. The latest agenda also lists further Cinemachine multi-camera work, parent/child operations through Transform, runtime collider adjustments, the Input System with mouse input, coin/climbing/shooting mechanics (object pooling), Trail Renderer, blend trees, 2D rigging and IK, parallax, Sprite Mask and UI Masks, post-processing, persistent managers, sprite optimisation, WebGL build and itch.io upload. These are remaining roadmap items, even where an earlier lecture introduced related basics.</p>
+<p>Audio continued after L39: <a href="#v44">L40</a> covers mixer routing, effects, Views, Snapshots and a piano; <a href="#v45">L41</a> adds footsteps and trigger sounds. The L40 controller is not a persistent manager. At L41 02:16, the instructor accepts separate homework for upcoming advanced topics when they do not fit a student's final game. Unit 2 is deeper C#; Unity 3D is explicitly promised for Unit 3.</p>
+
+</details>
+    <a href="#topic-17">Review the final project requirements →</a>
+  </section>
+  <section class="view" id="method" aria-labelledby="method-heading"><h2 id="method-heading">About this agenda</h2><p>Built from the recordings, with a clear distinction between the instructor’s plans and what was actually taught.</p><div class="method">
 <p>Playlist metadata and Arabic auto-captions cover all 45 videos (about 752,000 words in the saved transcripts). Each transcript was read to record what was taught, with timestamps, and what was postponed. For agenda checks, recordings were sampled every two seconds and compared with reference thumbnails of the instructor's Google Doc. Candidate matches were inspected visually: browser pages and app-switcher overlays can produce false matches. The cards use the last verified agenda views, mark any off-screen limits, and distinguish plans from actual coverage. The new recordings are archived at the best available quality, with 480p analysis copies used for detection and full-resolution crops for reading. Captions are machine-generated; covered topics are paraphrased and timestamps are approximate. The recording total is recalculated from the current 45-entry playlist metadata.</p>
 </div>
+<details class="reading-guide" open><summary>Using your study companion</summary><p>Search checks topic entries and full lecture cards, including future agenda items. Switch between Topic library and Lectures to explore both sets of results. Mark videos as watched inside a lecture card; progress stays in this browser and does not sync to YouTube or other devices.</p><p>The guide includes 45 videos, 40 with on-screen agenda documents. Recordings use Unity 6.4–6.6, VS Code, and URP 2D. Course recordings are in Arabic; these summaries are in English.</p></details></section>
+  <noscript><p class="reading-guide">Search, filters and watched progress need JavaScript. All topics, lecture agendas and video links are available below their section headings.</p></noscript>
+  <footer><span>GSG Track A · Game Development 2026</span><span>Content verified through 23 September 2026 · <a href="#method">Sources &amp; method</a></span></footer>
+</main>
 </div>
+
+<script>
+(() => {
+  'use strict';
+  const $ = selector => document.querySelector(selector);
+  const $$ = selector => [...document.querySelectorAll(selector)];
+  const cards = $$('.lec');
+  const groups = $$('.topic-group');
+  const search = $('#search');
+  const filter = $('#lecture-filter');
+  let storageAvailable = true;
+  const read = key => { try { return localStorage.getItem(key); } catch { storageAvailable = false; return null; } };
+  const write = (key, value) => { try { localStorage.setItem(key, value); } catch { storageAvailable = false; } updateStorageNote(); };
+  function updateStorageNote() { $('#storage-note').textContent = storageAvailable ? 'Saved in this browser.' : 'Storage unavailable. Progress lasts for this visit.'; }
+  let watched;
+  try { const saved = JSON.parse(read('gsg-agenda-watched') || '[]'); watched = new Set(Array.isArray(saved) ? saved.filter(id => cards.some(c => c.id === id)) : []); } catch { watched = new Set(); }
+  const normalise = value => value.toLowerCase().normalize('NFKC').replace(/\s+/g, ' ').trim();
+  const cardText = new Map(cards.map(card => [card, normalise(card.textContent + ' ' + card.querySelector('.t').childNodes[0].textContent.replace(/Lecture\s+(\d+)/i, 'L$1'))]));
+  const topicData = groups.map(group => ({group, title:normalise(group.querySelector('h3').textContent), rows:[...group.querySelectorAll('tr')].filter(row => row.querySelector('td')), text:normalise(group.textContent)}));
+  cards.forEach(card => {
+    const title = card.querySelector('.t').childNodes[0].textContent;
+    const videoURL = new URL(card.querySelector('.d a').href);
+    videoURL.search = '';
+    const actions = document.createElement('div');
+    actions.className = 'lecture-actions';
+    const label = document.createElement('label');
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox'; checkbox.checked = watched.has(card.id);
+    checkbox.setAttribute('aria-label', `Mark ${title} (${card.querySelector('.n').textContent}) as watched`);
+    label.append(checkbox, document.createTextNode('Mark as watched'));
+    const watch = document.createElement('a'); watch.href = videoURL.href; watch.textContent = 'Watch from start ↗'; watch.target = '_blank'; watch.rel = 'noopener noreferrer';
+    actions.append(label, watch); card.insertBefore(actions, card.querySelector('.body'));
+    const badge = document.createElement('span'); badge.className = 'watched-badge'; badge.textContent = '✓ Watched'; badge.hidden = !checkbox.checked; card.querySelector('.t').append(badge);
+    checkbox.addEventListener('change', () => {
+      checkbox.checked ? watched.add(card.id) : watched.delete(card.id);
+      write('gsg-agenda-watched', JSON.stringify([...watched])); updateProgress(); applyFilters();
+      if (card.hidden) filter.focus();
+    });
+  });
+  $$('a[href^="https://youtu.be/"]').forEach(link => { link.target = '_blank'; link.rel = 'noopener noreferrer'; });
+  function updateProgress() {
+    cards.forEach(card => { const done = watched.has(card.id); card.classList.toggle('is-watched', done); card.querySelector('.watched-badge').hidden = !done; });
+    $('#progress').value = watched.size; $('#progress').max = cards.length;
+    $('#progress-label').textContent = `${watched.size} of ${cards.length} videos watched`;
+    $('#mobile-progress').textContent = `${watched.size} / ${cards.length} watched`;
+  }
+  function applyFilters() {
+    const terms = normalise(search.value).split(' ').filter(Boolean);
+    const matches = text => terms.every(term => text.includes(term));
+    let topicCount = 0, lectureCount = 0;
+    topicData.forEach(({group, title, rows, text}) => {
+      let visible;
+      if (rows.length) {
+        rows.forEach(row => row.hidden = !matches(title + ' ' + normalise(row.textContent)));
+        visible = rows.some(row => !row.hidden);
+      } else visible = matches(text);
+      group.hidden = !visible;
+      if (terms.length && visible) group.open = true;
+      if (visible) topicCount++;
+    });
+    cards.forEach(card => {
+      const selected = filter.value;
+      const filterMatch = selected === 'all' || (selected === 'watched' && watched.has(card.id)) || (selected === 'unwatched' && !watched.has(card.id)) || (selected === 'guest' && ['v31','v40'].includes(card.id));
+      card.hidden = !filterMatch || !matches(cardText.get(card));
+      if (!card.hidden) lectureCount++;
+    });
+    $('#topic-results').textContent = `${topicCount} of ${groups.length} topic groups`;
+    $('#lecture-results').textContent = `${lectureCount} of ${cards.length} videos`;
+    $('#map-count').textContent = topicCount; $('#lecture-count').textContent = lectureCount;
+    $('#topics-empty').hidden = topicCount !== 0; $('#lectures-empty').hidden = lectureCount !== 0;
+    $('#clear-search').hidden = !search.value;
+    $('#search-status').textContent = terms.length ? `${topicCount} topic groups and ${lectureCount} videos match. Switch between Topic library and Lectures to see results.` : '';
+  }
+  function showView(id) {
+    $$('.view').forEach(view => view.hidden = view.id !== id);
+    $$('.side-nav a').forEach(link => { if (link.dataset.view === id) link.setAttribute('aria-current', 'page'); else link.removeAttribute('aria-current'); });
+    $('.searchbar').hidden = !['map','lectures'].includes(id);
+  }
+  function route(scroll = true) {
+    const hash = location.hash.slice(1);
+    const target = document.getElementById(hash);
+    let view = target?.closest('.view');
+    if (!view) view = $('#map');
+    if (target?.matches('.lec,.topic-group')) {
+      search.value = ''; filter.value = 'all'; applyFilters(); target.open = true;
+    }
+    showView(view.id);
+    if (scroll && target) requestAnimationFrame(() => {
+      const scrollTarget = target.matches('.view') && ['map','lectures'].includes(view.id) ? $('.searchbar') : target;
+      scrollTarget.scrollIntoView({block:'start'});
+      const focusTarget = target.matches('details') ? target.querySelector('summary') : target;
+      if (!focusTarget.hasAttribute('tabindex') && !focusTarget.matches('summary')) focusTarget.tabIndex = -1;
+      focusTarget.focus({preventScroll:true});
+    });
+  }
+  search.addEventListener('input', applyFilters);
+  $('#clear-search').addEventListener('click', () => { search.value = ''; applyFilters(); search.focus(); });
+  filter.addEventListener('change', applyFilters);
+  $('#lecture-sort').addEventListener('change', event => {
+    const sorted = event.target.value === 'newest' ? [...cards].reverse() : cards;
+    sorted.forEach(card => $('#lecture-list').append(card));
+  });
+  $$('[data-reset]').forEach(button => button.addEventListener('click', () => { search.value = ''; filter.value = 'all'; applyFilters(); search.focus(); }));
+  $$('[data-expand],[data-collapse]').forEach(button => button.addEventListener('click', () => {
+    const targets = (button.dataset.expand || button.dataset.collapse) === 'topics' ? groups : cards;
+    targets.filter(target => !target.hidden).forEach(target => target.open = !!button.dataset.expand);
+  }));
+  window.addEventListener('hashchange', () => route());
+  // Repeated links should also reopen a card that has since been closed or filtered out.
+  $$('a[href^="#"]').forEach(link => link.addEventListener('click', event => {
+    if (link.hash === location.hash && link.hash !== '#main') { event.preventDefault(); route(); }
+  }));
+  let theme = read('gsg-agenda-theme') || 'system';
+  if (!['system','light','dark'].includes(theme)) theme = 'system';
+  function applyTheme() { if (theme === 'system') delete document.documentElement.dataset.theme; else document.documentElement.dataset.theme = theme; $('#theme-label').textContent = theme[0].toUpperCase() + theme.slice(1); $('#theme').setAttribute('aria-label', `Color theme: ${theme}. Click to change.`); }
+  $('#theme').addEventListener('click', () => { theme = {system:'light',light:'dark',dark:'system'}[theme]; applyTheme(); write('gsg-agenda-theme', theme); });
+  applyTheme(); updateProgress(); updateStorageNote(); applyFilters();
+  document.documentElement.classList.add('enhanced'); $('#study-progress').classList.add('ready');
+  route(!!location.hash);
+})();
+</script>
+
 </body>
 </html>
