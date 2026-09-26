@@ -829,9 +829,10 @@ footer { margin-top:36px; padding-top:18px; border-top:1px solid var(--rule); di
     }
     showView(view.id);
     if (scroll && target) requestAnimationFrame(() => {
-      const scrollTarget = target.matches('.view') && ['map','lectures'].includes(view.id) ? $('.searchbar') : target;
-      scrollTarget.scrollIntoView({block:'start'});
-      const focusTarget = target.matches('details') ? target.querySelector('summary') : target;
+      const isTab = target.matches('.view');
+      if (isTab) window.scrollTo({top:0, left:0, behavior:'instant'});
+      else target.scrollIntoView({block:'start'});
+      const focusTarget = isTab ? $('#main') : target.matches('details') ? target.querySelector('summary') : target;
       if (!focusTarget.hasAttribute('tabindex') && !focusTarget.matches('summary')) focusTarget.tabIndex = -1;
       focusTarget.focus({preventScroll:true});
     });
